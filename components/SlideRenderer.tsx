@@ -69,6 +69,7 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeHotspot, setActiveHotspot] = useState<RevealItem | null>(null);
   const [activeMenuItem, setActiveMenuItem] = useState<number>(0);
+  const [activeSidePanel, setActiveSidePanel] = useState<number | null>(null);
 
   const [dragAssignments, setDragAssignments] = useState<Record<string, string>>({}); 
   const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
@@ -97,6 +98,7 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
     setFlippedCards({});
     setIsAppClosing(false);
     setActiveInterrogante(null);
+    setActiveSidePanel(null);
   }, [currentSlideIndex, slide.id]);
 
   const toggleCard = (idx: number) => {
@@ -164,7 +166,7 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
     );
   }
 
-  if (slide.id === 'slide-finish' || slide.id === 'slide-27') {
+  if (slide.id === 'slide-finish' || slide.id === 'slide-28') {
     return (
       <div className="h-full w-full relative flex items-center justify-center overflow-hidden bg-[#111111] p-12 lg:p-24">
          <div className="absolute inset-0 z-0">
@@ -195,16 +197,19 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
     );
   }
 
+  const isCriticalAnalysis = slide.id === 'slide-22';
+  const isLightLayout = slide.type === 'chart-results' || slide.type === 'hotspot-reveal';
+
   return (
-    <div className={`h-full w-full relative flex flex-col overflow-y-auto custom-scrollbar ${slide.type === 'chart-results' ? 'bg-[#f8fafc]' : 'bg-[#111111]'}`}>
-      {isBg && slide.type !== 'intro' && slide.type !== 'chart-results' && (
+    <div className={`h-full w-full relative flex flex-col overflow-y-auto custom-scrollbar ${isLightLayout ? 'bg-[#f8fafc]' : 'bg-[#111111]'}`}>
+      {isBg && slide.type !== 'intro' && !isLightLayout && (
         <div className="absolute inset-0 z-0">
           <img src={slide.visual.source} className="w-full h-full object-cover" alt="" />
           <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px]" />
         </div>
       )}
 
-      <div className={`relative z-10 flex-1 flex flex-col items-center justify-center ${slide.type === 'intro' || slide.type === 'split-slider' || slide.type === 'image-list-reveal' || slide.type === 'info-menu-reveal' || slide.type === 'tabs-reveal' || slide.type === 'stepped-overlay' || slide.type === 'chart-results' || slide.type === 'interactive-video' || slide.type === 'timeline' || slide.type === 'flashcards' || slide.type === 'split-reveal-cards' ? 'p-0' : 'p-8 lg:p-12 max-w-7xl mx-auto w-full'}`}>
+      <div className={`relative z-10 flex-1 flex flex-col items-center justify-center ${slide.type === 'intro' || slide.type === 'split-slider' || slide.type === 'image-list-reveal' || slide.type === 'info-menu-reveal' || slide.type === 'tabs-reveal' || slide.type === 'stepped-overlay' || slide.type === 'chart-results' || slide.type === 'interactive-video' || slide.type === 'timeline' || slide.type === 'flashcards' || slide.type === 'split-reveal-cards' || slide.type === 'hotspot-reveal' || slide.type === 'split-interactive-cards' ? 'p-0' : 'p-8 lg:p-12 max-w-7xl mx-auto w-full'}`}>
         
         {slide.type === 'intro' && (
           <div className="w-full h-full flex flex-col lg:flex-row bg-white overflow-hidden animate-in fade-in duration-1000">
@@ -264,46 +269,251 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
           </div>
         )}
 
+        {slide.type === 'split-interactive-cards' && slide.interaction?.revealItems && (
+          <div className="w-full h-full flex flex-col bg-[#f0f2f5] p-8 lg:p-16 animate-in fade-in duration-700 overflow-hidden relative">
+            <div className="max-w-7xl mx-auto w-full mb-8">
+               <span className="text-red-500 font-black uppercase tracking-[0.4em] text-xs">
+                  {slide.subtitle}
+               </span>
+               <h2 className="text-4xl lg:text-7xl font-black text-slate-900 uppercase tracking-tighter mt-2">
+                  {slide.title}
+               </h2>
+            </div>
+
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto h-full items-center">
+               {slide.interaction.revealItems.map((item, idx) => {
+                 const isExpanded = activeSidePanel === idx;
+
+                 return (
+                   <div key={idx} className="relative h-full max-h-[500px]">
+                      {/* Main Card View */}
+                      <div className={`w-full h-full bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden flex transition-all duration-500 ${isExpanded ? 'opacity-0 scale-95' : 'opacity-100'}`}>
+                         <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
+                            <h3 className="text-2xl lg:text-3xl font-black text-slate-900 uppercase mb-4">{item.title}</h3>
+                            <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                               {item.text}
+                            </p>
+                         </div>
+                         <button 
+                            onClick={() => { setActiveSidePanel(idx); markSlideComplete(currentSlideIndex); }}
+                            className="w-16 lg:w-24 bg-red-600 hover:bg-red-700 transition-colors flex flex-col items-center justify-center text-white shrink-0 group"
+                         >
+                            <div className="p-3 rounded-full bg-white/10 mb-8 group-hover:scale-110 transition-transform">
+                               {renderIcon('HelpCircle', 32)}
+                            </div>
+                            <span className="text-[10px] font-black uppercase tracking-widest rotate-90 whitespace-nowrap mt-8 opacity-80 group-hover:opacity-100">VER MÁS</span>
+                         </button>
+                      </div>
+
+                      {/* Expanded View Card / Overlay */}
+                      <div className={`absolute inset-0 z-20 bg-red-600 rounded-2xl shadow-2xl flex transition-all duration-700 ${isExpanded ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'}`}>
+                         <div className="flex-1 p-10 lg:p-16 flex flex-col text-white overflow-hidden">
+                            <div className="flex items-center gap-6 mb-8 shrink-0">
+                               <div className="p-4 bg-white/20 rounded-2xl">
+                                  {renderIcon(item.icon || 'FileText', 32)}
+                               </div>
+                               <h4 className="text-3xl lg:text-4xl font-black uppercase leading-none">{item.title}</h4>
+                            </div>
+                            <div className="flex-1 overflow-y-auto pr-4 text-white/95 custom-scrollbar-white">
+                               <p className="text-base lg:text-xl font-medium leading-relaxed whitespace-pre-wrap">
+                                  {item.longContent}
+                                </p>
+                            </div>
+                         </div>
+                         <button 
+                            onClick={() => setActiveSidePanel(null)}
+                            className="w-16 lg:w-24 bg-red-700 hover:bg-black transition-colors flex items-center justify-center text-white shrink-0"
+                         >
+                            <LucideIcons.X size={32} />
+                         </button>
+                      </div>
+                   </div>
+                 );
+               })}
+            </div>
+          </div>
+        )}
+
         {slide.type === 'chart-results' && slide.interaction?.revealItems && (
            <div className="w-full h-full flex items-center justify-center p-4 lg:p-10 bg-[#f8fafc]">
-             <div className="relative w-full max-w-5xl bg-white rounded-[2.5rem] lg:rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden h-[85vh] lg:h-[650px] flex flex-col">
+             <div className="relative w-full max-w-5xl bg-white rounded-[2.5rem] lg:rounded-[3rem] border border-slate-200 shadow-2xl overflow-hidden h-[85vh] lg:h-[650px] flex flex-col">
                 <div className="p-4 lg:p-8 border-b border-white/10 flex items-center justify-between shrink-0 bg-[#2a2a2a] relative z-20">
                    <div>
                       <h3 className="text-xl lg:text-3xl font-black uppercase text-white tracking-tighter leading-none">{slide.title}</h3>
-                      <p className="text-[9px] font-black text-red-600 uppercase tracking-widest mt-1">{slide.subtitle}</p>
+                      <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mt-1">{slide.subtitle}</p>
                    </div>
-                   <div className="flex gap-2 lg:gap-3">
-                      <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white/60 hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === 0}>{renderIcon('ChevronLeft', 18)}</button>
-                      <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white/60 hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === slide.interaction.revealItems.length - 1}>{renderIcon('ChevronRight', 18)}</button>
-                   </div>
+                   {!isCriticalAnalysis && (
+                     <div className="flex gap-2 lg:gap-3">
+                        <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white/60 hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === 0}>{renderIcon('ChevronLeft', 18)}</button>
+                        <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white/60 hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === slide.interaction.revealItems.length - 1}>{renderIcon('ChevronRight', 18)}</button>
+                     </div>
+                   )}
                 </div>
+                
                 <div className="flex-1 relative overflow-hidden text-slate-900 flex flex-col bg-slate-50">
-                   {slide.interaction.revealItems.map((item, i) => (
-                      <div key={i} className={`absolute inset-0 p-6 lg:p-12 flex flex-col lg:flex-row gap-6 lg:gap-12 items-center overflow-y-auto custom-scrollbar ${i === internalStep ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-12 z-0 pointer-events-none'}`}>
-                          <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-8 lg:gap-10 animate-in zoom-in-95 duration-1000">
-                             {item.chartData && <InteractivePieChart data={item.chartData} />}
-                          </div>
-                          <div className="flex-1 space-y-4 lg:space-y-6 flex flex-col justify-center text-left">
-                             <div className="space-y-2">
-                                <div className="p-3 bg-red-600 w-fit rounded-xl shadow-lg text-white">{renderIcon(item.icon, 24)}</div>
-                                <h4 className="text-xl lg:text-3xl font-black uppercase tracking-tighter text-slate-900 leading-tight">{item.title}</h4>
-                             </div>
-                             <div className="relative p-4 lg:p-6 rounded-xl lg:rounded-2xl border-l-4 border-red-600 bg-red-50">
-                               <p className="text-base lg:text-xl font-black text-red-600 italic leading-snug">"{item.text}"</p>
-                             </div>
-                             <p className="text-sm lg:text-lg opacity-80 text-slate-600 font-medium leading-relaxed max-w-2xl whitespace-pre-wrap">{item.longContent}</p>
-                             <div className="pt-2 flex items-center gap-3">
-                                <span className="text-[9px] font-black uppercase text-slate-400 tracking-widest">PROGRESO DIMENSIÓN</span>
-                                <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
-                                   <div className="h-full bg-red-600 transition-all duration-1000" style={{ width: `${((i + 1) / slide.interaction!.revealItems!.length) * 100}%` }} />
-                                </div>
-                             </div>
-                          </div>
-                      </div>
-                   ))}
+                   {isCriticalAnalysis ? (
+                     <div className="h-full w-full flex flex-col lg:flex-row gap-8 lg:gap-12 p-8 lg:p-14 animate-in fade-in duration-700">
+                        {/* Left: Interactive Pie Chart (Summarizing all 4 points) */}
+                        <div className="flex-1 flex flex-col items-center justify-center gap-10">
+                           <div className="w-full">
+                              <InteractivePieChart data={[
+                                 { label: 'Acciones Liderazgo', value: 25, color: '#ef4444' },
+                                 { label: 'Formación Docente', value: 25, color: '#b91c1c' },
+                                 { label: 'Motivación Logro', value: 25, color: '#991b1b' },
+                                 { label: 'Comunicación', value: 25, color: '#7f1d1d' }
+                              ]} />
+                           </div>
+                           <p className="text-lg lg:text-xl font-black text-slate-800 italic text-center max-w-sm border-l-4 border-red-600 pl-4 bg-red-50 py-3 rounded-r-xl">
+                              "Déficits estructurales que impactan la moral institucional"
+                           </p>
+                        </div>
+
+                        {/* Right: Numbered List following the reference image style */}
+                        <div className="flex-[1.2] flex flex-col justify-center gap-4 lg:gap-6 overflow-y-auto custom-scrollbar-dark pr-4">
+                           {slide.interaction.revealItems.map((item, idx) => (
+                              <button 
+                                key={idx} 
+                                onClick={() => setExpandedItem(item)}
+                                className="group flex items-center gap-6 p-4 lg:p-6 bg-white border border-slate-200 rounded-[1.5rem] lg:rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-red-500/30 transition-all text-left"
+                              >
+                                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-red-50 text-red-600 rounded-2xl lg:rounded-3xl flex items-center justify-center text-2xl lg:text-4xl font-black shrink-0 group-hover:bg-red-600 group-hover:text-white transition-all">
+                                    {idx + 1}
+                                 </div>
+                                 <div className="space-y-1">
+                                    <h4 className="text-sm lg:text-lg font-black text-slate-900 uppercase leading-none group-hover:text-red-600 transition-colors">{item.title}</h4>
+                                    <p className="text-xs lg:text-base text-slate-500 font-medium leading-tight opacity-75">{item.text}</p>
+                                 </div>
+                                 <div className="ml-auto p-2 bg-slate-50 rounded-full text-slate-300 group-hover:text-red-600 transition-all">
+                                    {renderIcon('ArrowRight', 18)}
+                                 </div>
+                              </button>
+                           ))}
+                        </div>
+                     </div>
+                   ) : (
+                     slide.interaction.revealItems.map((item, i) => (
+                        <div key={i} className={`absolute inset-0 p-6 lg:p-12 flex flex-col lg:flex-row gap-6 lg:gap-12 items-center overflow-y-auto custom-scrollbar ${i === internalStep ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-12 z-0 pointer-events-none'}`}>
+                            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-8 lg:gap-10 animate-in zoom-in-95 duration-1000">
+                               {item.chartData && <InteractivePieChart data={item.chartData} />}
+                            </div>
+                            <div className="flex-1 space-y-4 lg:space-y-6 flex flex-col justify-center text-left">
+                               <div className="space-y-2">
+                                  <div className="p-3 bg-red-600 w-fit rounded-xl shadow-lg text-white">{renderIcon(item.icon, 24)}</div>
+                                  <h4 className="text-xl lg:text-3xl font-black uppercase tracking-tighter text-slate-900 leading-tight">{item.title}</h4>
+                               </div>
+                               <div className="relative p-4 lg:p-6 rounded-xl lg:rounded-2xl border-l-4 border-red-600 bg-red-50">
+                                 <p className="text-base lg:text-xl font-black text-red-600 italic leading-snug">"{item.text}"</p>
+                               </div>
+                               <p className="text-sm lg:text-lg opacity-80 text-slate-600 font-medium leading-relaxed max-w-2xl whitespace-pre-wrap">{item.longContent}</p>
+                               <div className="pt-2 flex items-center gap-3">
+                                  <span className="text-[9px] font-black uppercase text-slate-400 tracking-widest">PROGRESO DIMENSIÓN</span>
+                                  <div className="flex-1 h-1 bg-slate-200 rounded-full overflow-hidden">
+                                     <div className="h-full bg-red-600 transition-all duration-1000" style={{ width: `${((i + 1) / slide.interaction!.revealItems!.length) * 100}%` }} />
+                                  </div>
+                               </div>
+                            </div>
+                        </div>
+                     ))
+                   )}
                 </div>
              </div>
            </div>
+        )}
+
+        {slide.type === 'hotspot-reveal' && slide.interaction?.revealItems && (
+          <div className="w-full h-full flex flex-col lg:flex-row bg-[#f8fafc] animate-in fade-in duration-700 overflow-hidden">
+             {/* Left Info Panel - Emulating the provided reference layout */}
+             <div className="w-full lg:w-[35%] bg-white p-12 lg:p-20 flex flex-col justify-center relative border-r border-slate-100 z-10">
+                {/* Visual Accent Decoration from the reference image */}
+                <div className="absolute top-0 left-0 w-full h-32 bg-slate-50 overflow-hidden -z-10 opacity-60">
+                   <div className="absolute top-0 right-0 w-[200%] h-full bg-slate-100/50 -rotate-[15deg] translate-y-[-20%]" />
+                </div>
+                <div className="absolute bottom-0 left-0 w-full h-64 bg-slate-50 overflow-hidden -z-10 opacity-60">
+                   <div className="absolute top-0 right-0 w-[200%] h-full bg-slate-100/50 rotate-[25deg] translate-y-[40%]" />
+                </div>
+
+                <div className="space-y-6 lg:space-y-10 animate-in slide-in-from-left-8 duration-1000">
+                   <div className="space-y-2">
+                      <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px] lg:text-xs">
+                         {slide.subtitle || 'PLAN DE ACCIÓN'}
+                      </span>
+                      <h2 className="text-4xl lg:text-7xl font-black uppercase tracking-tighter text-slate-900 leading-none">
+                         {slide.title}
+                      </h2>
+                   </div>
+                   <div className="w-20 h-1.5 bg-red-600 rounded-full" />
+                   <div className="space-y-6">
+                      <p className="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-6">
+                         {slide.content}
+                      </p>
+                   </div>
+                </div>
+             </div>
+
+             {/* Right Interactive Image Panel */}
+             <div className="flex-1 relative bg-slate-200 group overflow-hidden">
+                <img src={slide.visual.source} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[20s] group-hover:scale-110" alt="" />
+                <div className="absolute inset-0 bg-slate-900/10" />
+                
+                {slide.interaction.revealItems.map((item, idx) => (
+                   <button 
+                      key={idx} 
+                      style={{ left: `${item.x}%`, top: `${item.y}%` }} 
+                      onClick={() => setActiveHotspot(item)}
+                      className="absolute z-20 group/btn -translate-x-1/2 -translate-y-1/2"
+                   >
+                      <div className="absolute inset-0 bg-white/40 rounded-full animate-ping scale-150" />
+                      <div className={`relative w-8 h-8 lg:w-12 lg:h-12 ${activeHotspot === item ? 'bg-red-600 text-white scale-125' : 'bg-slate-900/90 text-white hover:bg-red-600'} rounded-full flex items-center justify-center transition-all duration-300 shadow-2xl border-2 border-white/20`}>
+                         <LucideIcons.Plus size={activeHotspot === item ? 24 : 20} className={`transition-transform duration-300 ${activeHotspot === item ? 'rotate-45' : ''}`} />
+                      </div>
+                      
+                      {/* Sub-label visible on hover */}
+                      <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover/btn:opacity-100 transition-opacity pointer-events-none shadow-xl border border-white/10 translate-y-2 group-hover/btn:translate-y-0 transition-transform">
+                         {item.title}
+                      </div>
+                   </button>
+                ))}
+             </div>
+
+             {/* Popup Modal for Hotspot details */}
+             {activeHotspot && (
+                <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 lg:p-12 animate-in fade-in duration-300">
+                   <div className="absolute inset-0 bg-slate-900/95 backdrop-blur-md" onClick={() => setActiveHotspot(null)} />
+                   <div className="relative w-full max-w-2xl bg-white rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.5)] overflow-hidden p-8 lg:p-14 flex flex-col gap-6 lg:gap-8 ring-1 ring-black/5">
+                      <div className="flex items-start justify-between">
+                         <div className="space-y-2">
+                            <div className="p-3 bg-red-50 text-red-600 w-fit rounded-2xl mb-4">
+                               {renderIcon(activeHotspot.icon || 'CheckCircle2', 32)}
+                            </div>
+                            <span className="text-red-500 font-black uppercase tracking-[0.4em] text-[10px]">RECOMENDACIÓN DETALLADA</span>
+                            <h3 className="text-2xl lg:text-4xl font-black text-slate-900 uppercase tracking-tighter leading-tight">
+                               {activeHotspot.title}
+                            </h3>
+                         </div>
+                         <button onClick={() => setActiveHotspot(null)} className="p-2 lg:p-4 bg-slate-100 text-slate-400 rounded-full hover:bg-red-600 hover:text-white transition-all">
+                            {renderIcon('X', 20)}
+                         </button>
+                      </div>
+                      <div className="flex-1 overflow-y-auto custom-scrollbar-dark px-1">
+                         <p className="text-lg lg:text-2xl font-bold text-slate-700 leading-relaxed italic mb-6 border-l-4 border-red-500 pl-6 py-2">
+                            {activeHotspot.text}
+                         </p>
+                         <p className="text-base lg:text-xl text-slate-500 font-medium leading-relaxed whitespace-pre-wrap">
+                            {activeHotspot.longContent}
+                         </p>
+                      </div>
+                      <div className="flex justify-end pt-4">
+                         <button 
+                            onClick={() => { setActiveHotspot(null); markSlideComplete(currentSlideIndex); }} 
+                            className="px-10 py-4 bg-red-600 rounded-full font-black uppercase text-[10px] lg:text-xs tracking-[0.3em] text-white hover:scale-105 transition-all shadow-xl"
+                         >
+                            Continuar Explorando
+                         </button>
+                      </div>
+                   </div>
+                </div>
+             )}
+          </div>
         )}
 
         {slide.type === 'split-reveal-cards' && (
@@ -656,44 +866,6 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
            </div>
         )}
 
-        {slide.type === 'hotspot-reveal' && slide.interaction?.revealItems && (
-           <div className="w-full h-full relative flex items-center justify-center p-8 lg:p-12">
-              <div className="absolute inset-0 z-0 rounded-[4.5rem] overflow-hidden border border-white/10 shadow-2xl bg-black">
-                 <img src={slide.visual.source} className="w-full h-full object-cover scale-110" alt="Map" />
-                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90" />
-                 <div className="absolute top-16 left-16 text-white z-10">
-                    <h3 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter leading-none">{slide.title}</h3>
-                    <p className="text-sm font-bold text-red-500 uppercase tracking-[0.5em] mt-2">{slide.subtitle}</p>
-                 </div>
-                 {slide.interaction.revealItems.map((item, idx) => (
-                    <button key={idx} style={{ left: `${item.x}%`, top: `${item.y}%` }} onClick={() => setActiveHotspot(item)} className="absolute z-20 group -translate-x-1/2 -translate-y-1/2">
-                       <div className="absolute w-12 h-12 bg-red-600/40 rounded-full animate-ping" />
-                       <div className={`relative w-10 h-10 ${activeHotspot === item ? 'bg-white text-red-600 scale-125' : 'bg-red-600 text-white'} rounded-full flex items-center justify-center transition-all duration-300`}>
-                          {renderIcon(item.icon, 18)}
-                       </div>
-                    </button>
-                 ))}
-              </div>
-              {activeHotspot && (
-                <div className="relative z-30 w-full max-w-2xl animate-in zoom-in-95">
-                   <div className="bg-[#111111]/98 backdrop-blur-3xl p-12 rounded-[4rem] border border-white/10 shadow-2xl flex flex-col gap-8 ring-1 ring-white/5 max-h-[85vh] overflow-y-auto custom-scrollbar">
-                      <div className="flex items-center justify-between border-b border-white/5 pb-6">
-                         <div className="space-y-1">
-                            <h4 className="text-3xl font-black uppercase text-white tracking-tighter">{activeHotspot.title}</h4>
-                            <p className="text-xs font-bold text-red-500 uppercase tracking-widest">{activeHotspot.text}</p>
-                         </div>
-                         <button onClick={() => setActiveHotspot(null)} className="p-3 bg-white/5 rounded-full text-white/40 hover:text-white transition-all hover:bg-red-600">{renderIcon('X', 20)}</button>
-                      </div>
-                      <div className="space-y-6">
-                         <p className="text-lg lg:text-xl opacity-90 text-slate-200 leading-relaxed font-light whitespace-pre-wrap">{activeHotspot.longContent}</p>
-                      </div>
-                      <button onClick={() => { setActiveHotspot(null); markSlideComplete(currentSlideIndex); }} className="w-full py-6 bg-red-600 rounded-[2.5rem] font-black uppercase text-xs tracking-[0.5em] text-white hover:scale-105 transition-all shadow-xl">Continuar</button>
-                   </div>
-                </div>
-              )}
-           </div>
-        )}
-
         {slide.type === 'split-slider' && slide.interaction?.revealItems && (
            <div className="w-full h-full flex flex-col bg-white overflow-hidden">
               <div className="relative h-[45vh] lg:h-[55vh] w-full overflow-hidden shrink-0">
@@ -819,16 +991,16 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
       {expandedItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-8 lg:p-16">
           <div className="absolute inset-0 bg-black/98 backdrop-blur-3xl" onClick={() => setExpandedItem(null)} />
-          <div className="relative w-full max-w-7xl bg-[#111111] rounded-[5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[90vh] border border-white/10 animate-in zoom-in-95">
+          <div className="relative w-full max-w-7xl bg-white rounded-[5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[90vh] border border-white/10 animate-in zoom-in-95">
               <div className="flex-1 min-h-[400px] lg:min-h-full">
                 <img src={expandedItem.image} className="w-full h-full object-cover" />
               </div>
-              <div className="flex-1 p-12 lg:p-24 overflow-y-auto space-y-10 text-white custom-scrollbar bg-[#111111]">
-                <button onClick={() => setExpandedItem(null)} className="absolute top-10 right-10 p-4 bg-white/5 rounded-full hover:bg-red-600 transition-all">{renderIcon('X', 28)}</button>
-                <h3 className="text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white">{expandedItem.title}</h3>
-                <p className="text-2xl font-bold text-red-600 leading-tight italic border-l-8 border-red-600 pl-8 bg-red-600/5 p-6 rounded-2xl">"{expandedItem.text}"</p>
-                <p className="text-xl font-light opacity-90 leading-relaxed text-slate-200">{expandedItem.longContent}</p>
-                <button onClick={() => { setExpandedItem(null); markSlideComplete(currentSlideIndex); }} className="px-12 py-5 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em]">Regresar</button>
+              <div className="flex-1 p-12 lg:p-24 overflow-y-auto space-y-10 text-slate-900 custom-scrollbar bg-white">
+                <button onClick={() => setExpandedItem(null)} className="absolute top-10 right-10 p-4 bg-slate-100 rounded-full hover:bg-red-600 hover:text-white transition-all">{renderIcon('X', 28)}</button>
+                <h3 className="text-5xl lg:text-6xl font-black uppercase tracking-tighter text-slate-900">{expandedItem.title}</h3>
+                <p className="text-2xl font-bold text-red-600 leading-tight italic border-l-8 border-red-600 pl-8 bg-red-50 p-6 rounded-2xl">"{expandedItem.text}"</p>
+                <p className="text-xl font-medium opacity-90 leading-relaxed text-slate-600">{expandedItem.longContent}</p>
+                <button onClick={() => { setExpandedItem(null); markSlideComplete(currentSlideIndex); }} className="px-12 py-5 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] text-white">Regresar</button>
               </div>
           </div>
         </div>

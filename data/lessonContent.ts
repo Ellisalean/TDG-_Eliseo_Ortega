@@ -5,7 +5,7 @@ export const COUNSELING_LESSON: Lesson = {
   id: 'leadership-lesson-v3',
   title: 'El impacto del liderazgo de los directivos',
   subtitle: 'Maestría en Educación - Eliseo Ortega',
-  totalSlides: 27,
+  totalSlides: 29,
   slides: [
     {
       id: 'slide-1',
@@ -78,8 +78,16 @@ export const COUNSELING_LESSON: Lesson = {
     },
     {
       id: 'slide-7',
-      type: 'stepped-overlay',
+      type: 'visual-info',
       title: 'Capítulo I: El Problema',
+      subtitle: 'Planteamiento de la Investigación',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/9f0e9592-777b-4b1b-a365-b573df645b9e_rw_1920.jpg?h=d0b31c599ddade66a9bcd1562d38b570', position: 'background' },
+      content: 'Análisis detallado de la problemática, interrogantes y objetivos de estudio en la U.E. Andrés Bello.'
+    },
+    {
+      id: 'slide-8',
+      type: 'stepped-overlay',
+      title: 'Desarrollo del Problema',
       subtitle: 'Planteamiento y Objetivos',
       visual: { type: 'image', source: 'https://picsum.photos/seed/prob/1200/800', position: 'background' },
       interaction: {
@@ -124,7 +132,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-8',
+      id: 'slide-9',
       type: 'hotspot-reveal',
       title: 'Delimitación de la Investigación',
       subtitle: 'Unidad Educativa Andrés Bello',
@@ -160,26 +168,26 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-alcances',
+      id: 'slide-10',
       type: 'split-reveal-cards',
       title: 'Alcances de la Investigación',
       subtitle: 'Delimitación y Enfoque',
       visual: { type: 'image', source: 'https://picsum.photos/seed/alcances/1200/800', position: 'right' },
-      content: 'El alcance de esta investigación se delimita a la Unidad Educativa Nacional "Andrés Bello" del Estado Aragua en Venezuela. Se enfoca exclusivamente en analizar el impacto del liderazgo directivo sobre el aprendizaje de los estudiantes, excluyendo otras variables no relacionadas directamente con el liderazgo organizacional.',
+      content: 'El alcance de esta investigación se delimita a la Unidad Educativa Nacional "Andrés Bello" del Estado Aragua en Venezuela. Se enfoca exclusivamente en analizar el impacto del liderazgo directivo sobre el aprendizaje de los estudiantes.',
       interaction: {
         type: 'grid-cards',
         revealItems: [
           { 
             title: 'Metodología y Tipo', 
             text: 'Enfoque Cuantitativo Descriptivo', 
-            longContent: 'Se utilizará una metodología cuantitativa para comprender en profundidad las percepciones del personal. El estudio es descriptivo, detallando cómo el liderazgo impacta en el aprendizaje.', 
+            longContent: 'Se utilizará una metodología cuantitativa para comprender en profundidad las percepciones del personal.', 
             icon: 'BarChart3', 
             image: 'https://picsum.photos/seed/methods/800/600' 
           },
           { 
             title: 'Población y Tiempo', 
             text: 'Muestra Censal 2023-2024', 
-            longContent: 'Muestra de 2-3 personas por área (docentes, directivos, administrativos). La investigación se desarrolla durante el periodo escolar 2023-2024 (aproximadamente un año).', 
+            longContent: 'Muestra de 2-3 personas por área (docentes, directivos, administrativos).', 
             icon: 'Clock', 
             image: 'https://picsum.photos/seed/time/800/600' 
           }
@@ -187,7 +195,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-9',
+      id: 'slide-11',
       type: 'visual-info',
       title: 'Limitaciones',
       subtitle: 'Desafíos del Proceso',
@@ -196,16 +204,16 @@ export const COUNSELING_LESSON: Lesson = {
       bullets: ['Falta de recursos tecnológicos', 'Resistencia al cambio en algunos participantes', 'Contexto económico volátil']
     },
     {
-      id: 'slide-11',
+      id: 'slide-12',
       type: 'visual-info',
       title: 'Capítulo II: Marco Teórico',
       subtitle: 'Fundamentación de la Investigación',
       visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b1a6143a-7316-4d39-bd6b-61a6242d5748_rw_1920.jpg?h=b1e347dd27c67cb8d3ea5b7547128eb1', position: 'background' },
-      content: 'Un marco teórico es quien encuadra, contiene y ubica el problema de investigación, dándole sentido y significado. Al igual que una teoría proporciona descripciones, comprensión y explicaciones, también otorga un marco sólido y coherente según Daros (2002).',
+      content: 'Un marco teórico es quien encuadra, contiene y ubica el problema de investigación, dándole sentido y significado.',
       bullets: ['Comprensión del liderazgo educativo', 'Base para el análisis del aprendizaje', 'Influencia de líderes escolares']
     },
     {
-      id: 'slide-12',
+      id: 'slide-13',
       type: 'stepped-overlay',
       title: 'Antecedentes de la Investigación',
       subtitle: 'Referentes Internacionales y Nacionales',
@@ -245,7 +253,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-13',
+      id: 'slide-14',
       type: 'tabs-reveal',
       title: 'Bases Teóricas: El Liderazgo',
       subtitle: 'Definiciones y Conceptos',
@@ -262,10 +270,10 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-14',
+      id: 'slide-15',
       type: 'split-slider',
       title: 'Estilos de Liderazgo',
-      subtitle: 'Enfoques Clásicos y Autores',
+      subtitle: 'Enfoques Clásicos',
       visual: { type: 'image', source: 'https://picsum.photos/seed/lead-styles/1200/800', position: 'top' },
       interaction: {
         type: 'internal-slider',
@@ -279,10 +287,10 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-15',
+      id: 'slide-16',
       type: 'stepped-overlay',
       title: 'Bases Legales',
-      subtitle: 'Marco Normativo Educativo',
+      subtitle: 'Marco Normativo',
       visual: { type: 'image', source: 'https://picsum.photos/seed/law-ven/1200/800', position: 'background' },
       interaction: {
         type: 'stepped-reveal',
@@ -312,19 +320,19 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-16',
+      id: 'slide-17',
       type: 'visual-info',
       title: 'Capítulo III: Marco Metodológico',
-      subtitle: 'Enfoque, Diseño y Procedimientos',
+      subtitle: 'Enfoque y Diseño',
       visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
-      content: '“El marco metodológico, es la instancia referida a los métodos, a diversas reglas, registros, técnicas y protocolos con los cuales una Teoría y su Método calculan las magnitudes de lo real” (Balestrini, 2006, p 126).',
-      bullets: ['Recopilación objetiva de datos', 'Análisis estadístico riguroso', 'Diseño de proyecto factible']
+      content: 'Metodología, técnicas y protocolos utilizados para recolectar y analizar los datos de la investigación.',
+      bullets: ['Recopilación objetiva', 'Análisis riguroso', 'Proyecto factible']
     },
     {
-      id: 'slide-17',
+      id: 'slide-18',
       type: 'stepped-overlay',
       title: 'Desarrollo Metodológico',
-      subtitle: 'Fases, Población y Rigor Científico',
+      subtitle: 'Fases y Rigor',
       visual: { type: 'image', source: 'https://picsum.photos/seed/method-details/1200/800', position: 'background' },
       interaction: {
         type: 'stepped-reveal',
@@ -372,6 +380,20 @@ export const COUNSELING_LESSON: Lesson = {
             image: 'https://picsum.photos/seed/likert/800/600' 
           },
           { 
+            title: 'Dimensión', 
+            text: 'Se extrae o se identifica a partir del análisis', 
+            longContent: 'Arias expresa que una dimensión es una característica o aspecto fundamental que se extrae o se identifica a partir del análisis o segmentación de una variable más amplia y compleja, permitiendo así una comprensión más detallada de su estructura y comportamiento.', 
+            icon: 'FileText', 
+            image: 'https://picsum.photos/seed/likert/800/600' 
+          },
+          { 
+            title: 'Indicador', 
+            text: 'Se utiliza para examinar y cuantificar una variable o sus dimensiones.', 
+            longContent: 'Un indicador es un síntoma, una señal o un método de medición que se utiliza para examinar y cuantificar una variable o sus dimensiones, lo que permite a los investigadores y analistas comprender mejor su naturaleza y comportamiento.', 
+            icon: 'FileText', 
+            image: 'https://picsum.photos/seed/likert/800/600' 
+          },
+          { 
             title: 'Validación de Expertos', 
             text: 'Juicio de Contenido', 
             longContent: 'Uso de validez de criterio (Palella y Martins, 2012). Se considera la opinión de tres expertos en metodología para evaluar si el instrumento refleja correctamente la realidad que se intenta medir y pronosticar.', 
@@ -389,16 +411,16 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-18',
+      id: 'slide-19',
       type: 'visual-info',
       title: 'Capítulo IV: Análisis y Resultados',
-      subtitle: 'Resultados del Trabajo de Campo',
+      subtitle: 'Trabajo de Campo',
       visual: { type: 'image', source: 'https://picsum.photos/seed/results-cover/1920/1080', position: 'background' },
-      content: 'Presentación detallada de los datos obtenidos a través del instrumento de 15 ítems aplicado a la muestra de 11 sujetos. El análisis se divide en tres dimensiones clave del liderazgo educativo según Bass, Avolio y Goleman.',
-      bullets: ['Dimensión 1: Liderazgo de los Directivos', 'Dimensión 2: Impacto en el Aprendizaje', 'Dimensión 3: Impulso mediante el Liderazgo']
+      content: 'Presentación detallada de los datos obtenidos a través del instrumento aplicado a la muestra.',
+      bullets: ['Liderazgo Directivo', 'Impacto Aprendizaje', 'Impulso mediante Liderazgo']
     },
     {
-      id: 'slide-19',
+      id: 'slide-20',
       type: 'chart-results',
       title: 'Dimensión 1: Liderazgo de los Directivos',
       subtitle: 'Ítems 1 al 5',
@@ -459,13 +481,11 @@ export const COUNSELING_LESSON: Lesson = {
               { label: 'Nunca', value: 45, color: '#ef4444' },
               { label: 'A veces', value: 55, color: '#f59e0b' },
               { label: 'Siempre', value: 0, color: '#10b981' }
-            ]
-          }
         ]
       }
     },
     {
-      id: 'slide-20',
+      id: 'slide-21',
       type: 'chart-results',
       title: 'Dimensión 2: Impacto en el Aprendizaje',
       subtitle: 'Ítems 6 al 10',
@@ -515,9 +535,9 @@ export const COUNSELING_LESSON: Lesson = {
               { label: 'Nunca', value: 36, color: '#ef4444' },
               { label: 'A veces', value: 36, color: '#f59e0b' },
               { label: 'Siempre', value: 28, color: '#10b981' }
-            ]
-          },
-          { 
+        ]
+      }
+      { 
             title: '10. Grupos Hostiles', 
             text: '¿Muestran dominio ante grupos hostiles?', 
             longContent: '36% Nunca, 46% A veces. Rogers (1951) sostiene que el manejo adecuado de conflictos es esencial para facilitar un aprendizaje efectivo.',
@@ -528,11 +548,9 @@ export const COUNSELING_LESSON: Lesson = {
               { label: 'Siempre', value: 18, color: '#10b981' }
             ]
           }
-        ]
-      }
     },
     {
-      id: 'slide-21',
+      id: 'slide-22',
       type: 'chart-results',
       title: 'Dimensión 3: Impulso mediante Liderazgo',
       subtitle: 'Ítems 11 al 15',
@@ -599,69 +617,78 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-22',
-      type: 'visual-info',
+      id: 'slide-23',
+      type: 'chart-results',
       title: 'Análisis Crítico de Resultados',
-      subtitle: 'Interpretación de Datos',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/analyze/800/600', position: 'right' },
-      content: 'Los resultados revelan debilidades críticas en formación directiva (55% brecha) y capacitación docente (73% déficit). La falta de comunicación asertiva (55%) sugiere un aislamiento organizacional.',
-      bullets: [
-        'Déficit estructural en formación de líderes',
-        'Necesidad urgente de espacios motivacionales',
-        'Brecha en gestión de grupos hostiles (36%)',
-        'Falta de sincronía directivo-docente'
-      ]
+      subtitle: 'Hallazgos Clave',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/analyze-crit/1200/800', position: 'background' },
+      interaction: {
+        type: 'charts',
+        revealItems: [
+          { title: 'Déficit de Liderazgo (55%)', text: 'Brecha de Gestión', longContent: 'La falta de acciones dificulta la toma de decisiones.', icon: 'TrendingDown', chartData: [{ label: 'Brecha', value: 55, color: '#ef4444' }, { label: 'Cumplimiento', value: 45, color: '#cbd5e1' }] }
+        ]
+      }
     },
     {
-      id: 'slide-23',
+      id: 'slide-24',
       type: 'visual-info',
       title: 'Capítulo V: Conclusiones',
       subtitle: 'Síntesis Final',
       visual: { type: 'image', source: 'https://picsum.photos/seed/conc/800/600', position: 'left' },
-      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica de la institución. Sin un líder formativo, las innovaciones se ven truncadas.',
-      bullets: [
-        'El liderazgo efectivo mejora el aprendizaje.',
-        'La formación directiva es una necesidad urgente.',
-        'La comunicación es el eje de la mejora escolar.'
-      ]
-    },
-    {
-      id: 'slide-24',
-      type: 'reflection',
-      title: 'Recomendaciones',
-      subtitle: 'Hacia la Excelencia',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/rec/1200/800', position: 'background' },
-      content: '¿De qué manera cree usted que un cambio en el liderazgo directivo impactaría su propia aula?',
+      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica.',
+      bullets: ['Liderazgo efectivo', 'Formación urgente', 'Comunicación asertiva']
     },
     {
       id: 'slide-25',
-      type: 'stepped-overlay',
-      title: 'Capítulo VI: La Propuesta',
-      subtitle: 'Programa de Formación',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/prop/1200/800', position: 'background' },
+      type: 'hotspot-reveal',
+      title: 'Recomendaciones',
+      subtitle: 'Plan de Mejora',
+      content: 'Estrategias sugeridas para mejorar el liderazgo directivo y docente.',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'right' },
       interaction: {
-        type: 'stepped-reveal',
+        type: 'hotspots',
         revealItems: [
-          { title: 'Fase 1', text: 'Capacitación Directiva', longContent: 'Talleres en inteligencia emocional y resolución de conflictos.', icon: 'Users', image: 'https://picsum.photos/seed/workshop/800/600' },
-          { title: 'Fase 2', text: 'Estrategias Pedagógicas', longContent: 'Acompañamiento y seguimiento constante del aprendizaje.', icon: 'Target', image: 'https://picsum.photos/seed/aim/800/600' }
+          { title: 'Formación', text: 'Plan de Capacitación', longContent: 'Impulsar un plan anual que aborde metodologías.', icon: 'GraduationCap', x: 75, y: 15 }
         ]
       }
     },
     {
       id: 'slide-26',
       type: 'visual-info',
+      title: 'Capítulo VI: PROPUESTA DE INVESTIGACIÓN',
+      subtitle: 'Gerencia y Liderazgo',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
+      content: 'Reimaginando el futuro educativo a través de la formación.'
+    },
+    {
+      id: 'slide-27',
+      type: 'split-interactive-cards',
+      title: 'Desarrollo de la Propuesta',
+      subtitle: 'Detalles del Capítulo VI',
+      visual: { type: 'image', source: '', position: 'background' },
+      interaction: {
+        type: 'split-interactive',
+        revealItems: [
+          { title: 'Exposición de Motivos', text: 'Calidad de la enseñanza...', longContent: 'La preocupación por la calidad de la enseñanza...', icon: 'FileText' },
+          { title: 'Justificación', text: 'Fundamentos de la propuesta...', longContent: 'Los alarmantes hallazgos surgidos de la evaluación...', icon: 'Lightbulb' }
+        ]
+      }
+    },
+    {
+      id: 'slide-28',
+      type: 'visual-info',
       title: 'Pensamiento Final',
-      subtitle: 'Cierre de la Defensa',
+      subtitle: 'Cierre',
       visual: { type: 'image', source: 'https://picsum.photos/seed/final/1200/800', position: 'background' },
       content: '"El liderazgo no se trata de estar al mando, se trata de cuidar a los que están a tu mando." - Simon Sinek'
     },
     {
-      id: 'slide-27',
+      id: 'slide-29',
       type: 'visual-info',
       title: '¡Gracias por su atención!',
       subtitle: 'Defensa de Tesis Exitosa',
       visual: { type: 'image', source: 'https://picsum.photos/seed/sky/1200/800', position: 'background' },
-      content: 'Maestrante Eliseo Ortega. Gerencia Educativa. Universidad Nacional Abierta.'
+      content: 'Maestrante Eliseo Ortega. Universidad Nacional Abierta.'
     }
   ]
 };

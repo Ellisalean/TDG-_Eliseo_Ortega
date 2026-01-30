@@ -1,4 +1,5 @@
 
+
 import React, { useEffect, useState } from 'react';
 import { useLessonStore } from './store/useLessonStore';
 import { COUNSELING_LESSON } from './data/lessonContent';
@@ -262,3 +263,6 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+
