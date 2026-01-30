@@ -21,7 +21,8 @@ export type SlideType =
   | 'interactive-video'
   | 'image-list-reveal'
   | 'split-reveal-cards'
-  | 'flashcards';
+  | 'flashcards'
+  | 'chart-results';
 
 export interface SlideVisual {
   type: 'image' | 'icon' | 'diagram' | 'map';
@@ -29,6 +30,12 @@ export interface SlideVisual {
   alt?: string;
   position?: 'left' | 'right' | 'top' | 'background';
   effect?: 'vignette' | 'none' | 'blur' | 'overlay-dark';
+}
+
+export interface ChartData {
+  label: string;
+  value: number;
+  color: string;
 }
 
 export interface RevealItem {
@@ -40,6 +47,7 @@ export interface RevealItem {
   tags?: string[];
   x?: number; // Hotspot X coordinate (0-100)
   y?: number; // Hotspot Y coordinate (0-100)
+  chartData?: ChartData[];
 }
 
 export interface DragItem {
@@ -62,7 +70,7 @@ export interface Slide {
   content?: string;
   bullets?: string[];
   interaction?: {
-    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards';
+    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards' | 'charts';
     options?: SlideOption[];
     revealItems?: RevealItem[];
     puzzleItems?: PuzzleItem[];

@@ -5,7 +5,7 @@ export const COUNSELING_LESSON: Lesson = {
   id: 'leadership-lesson-v3',
   title: 'El impacto del liderazgo de los directivos',
   subtitle: 'Maestría en Educación - Eliseo Ortega',
-  totalSlides: 24,
+  totalSlides: 27,
   slides: [
     {
       id: 'slide-1',
@@ -116,7 +116,7 @@ export const COUNSELING_LESSON: Lesson = {
           { 
             title: 'Justificación', 
             text: 'Relevancia Social', 
-            longContent: 'Entender el liderazgo en entornos adversos permite diseñar estrategias de mejora realistas que beneficien directamente a la comunidad estudiantil y docente.', 
+            longContent: 'Entender el liderazgo en entornos adversos permite diseñar estrategias de mejora realistas que beneficia directamente a la comunidad estudiantil y docente.', 
             icon: 'ShieldCheck', 
             image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2df9eefd-3a4d-46f4-89dd-8a440ccb6522_rw_1920.jpg?h=89dd00034ea0a91c3a3026d7abc7cb02' 
           }
@@ -195,7 +195,6 @@ export const COUNSELING_LESSON: Lesson = {
       content: 'Durante la investigación se enfrentaron diversos obstáculos que definieron el alcance del estudio.',
       bullets: ['Falta de recursos tecnológicos', 'Resistencia al cambio en algunos participantes', 'Contexto económico volátil']
     },
-    // --- CAPÍTULO II: MARCO TEÓRICO (REFACTORIZADO) ---
     {
       id: 'slide-11',
       type: 'visual-info',
@@ -215,28 +214,28 @@ export const COUNSELING_LESSON: Lesson = {
         type: 'stepped-reveal',
         revealItems: [
           { 
-            title: 'Internacional  Chambi (2023) ', 
+            title: 'Internacional Chambi (2023) ', 
             text: 'Liderazgo Pedagógico y Crisis', 
             longContent: 'U. Nacional Mayor de San Marcos (Perú). El liderazgo pedagógico es fundamental en la gestión de cambios y transformaciones. En situaciones de crisis, el líder orienta a la institución hacia soluciones viables y adaptables a su contexto.', 
             icon: 'Globe', 
             image: 'https://picsum.photos/seed/peru/800/600' 
           },
           { 
-            title: 'Internacional  Vidal (2023)  ', 
+            title: 'Internacional Vidal (2023)  ', 
             text: 'Liderazgo Directivo Transformacional', 
             longContent: 'U. Nacional Mayor de San Marcos (Perú). Percibe que algunos directores no están plenamente comprometidos, careciendo de liderazgo. Es fundamental contar con un líder y una gestión adecuada para el éxito de la comunidad.', 
             icon: 'Users', 
             image: 'https://picsum.photos/seed/vid/800/600' 
           },
           { 
-            title: 'Nacional  Dorado(2022) ', 
+            title: 'Nacional Dorado(2022) ', 
             text: 'Gestión en la Nueva Ruralidad', 
             longContent: 'Rubio, Táchira. Considera que ante los cambios políticos y sociales rurales, los directivos deben reflexionar sobre su gestión y armonizar acciones en un modelo explicativo de su actuar.', 
             icon: 'MapPin', 
             image: 'https://picsum.photos/seed/ven/800/600' 
           },
           { 
-            title: 'Nacional    Cañas (2022) ', 
+            title: 'Nacional - Cañas (2022) ', 
             text: 'El Gerente Educativo como Líder', 
             longContent: 'Rubio, Táchira. El educador necesita adecuar su modelo de enseñanza a un mundo dominado por la tecnología. Propone que con un modelo de liderazgo transformacional se lograrán grandes resultados.', 
             icon: 'GraduationCap', 
@@ -264,18 +263,18 @@ export const COUNSELING_LESSON: Lesson = {
     },
     {
       id: 'slide-14',
-      type: 'flashcards',
+      type: 'split-slider',
       title: 'Estilos de Liderazgo',
       subtitle: 'Enfoques Clásicos y Autores',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/lead-styles/1200/800', position: 'background' },
+      visual: { type: 'image', source: 'https://picsum.photos/seed/lead-styles/1200/800', position: 'top' },
       interaction: {
-        type: 'flashcards',
+        type: 'internal-slider',
         revealItems: [
-          { title: 'Autocrático', text: 'Control absoluto y decisiones sin consulta. Efectivo en crisis, pero genera resistencia y baja motivación.', icon: 'Lock', image: 'https://picsum.photos/seed/lead1/400/600' },
-          { title: 'Transformacional', text: 'Bernard Morris Bass: El líder inspira al equipo para superar sus expectativas normales, creando cambios positivos y significativos.', icon: 'Zap', image: 'https://picsum.photos/seed/lead2/400/600' },
-          { title: 'Transaccional', text: 'Carl R. Rogers (1957): Basado en el intercambio de favores y beneficios mutuos para ganancias personales en lugar de afecto auténtico.', icon: 'RefreshCw', image: 'https://picsum.photos/seed/lead3/400/600' },
-          { title: 'Laissez-faire', text: 'Hersey & Blanchard (1969): Autonomía total. El líder permite que el equipo tome decisiones según su madurez y habilidades.', icon: 'Coffee', image: 'https://picsum.photos/seed/lead4/400/600' },
-          { title: 'De Servicio', text: 'Robert K. Greenleaf (1970): El líder es un servidor primero. Se centra en satisfacer necesidades y mejorar el bienestar del equipo.', icon: 'Heart', image: 'https://picsum.photos/seed/lead5/400/600' }
+          { title: 'Estilo Autocrático', text: 'Control absoluto y decisiones sin consulta.', longContent: 'Efectivo en situaciones de crisis extrema, pero a menudo genera resistencia y baja motivación en el equipo docente a largo plazo.', icon: 'Lock', image: 'https://picsum.photos/seed/lead1/1200/800' },
+          { title: 'Estilo Transformacional', text: 'Bernard Morris Bass: Inspiración para superar expectativas.', longContent: 'El líder busca crear cambios positivos significativos motivando a sus seguidores a trascender sus propios intereses por el bien común.', icon: 'Zap', image: 'https://picsum.photos/seed/lead2/1200/800' },
+          { title: 'Estilo Transaccional', text: 'Carl R. Rogers (1957): Intercambio de beneficios mutuos.', longContent: 'Basado en transacciones prácticas entre líder y seguidores para satisfacer necesidades inmediatas de ambas partes.', icon: 'RefreshCw', image: 'https://picsum.photos/seed/lead3/1200/800' },
+          { title: 'Estilo Laissez-faire', text: 'Hersey & Blanchard (1969): Autonomía total para el equipo.', longContent: 'El líder delega totalmente la toma de decisiones, confiando en la madurez y alta capacidad profesional de sus subordinados.', icon: 'Coffee', image: 'https://picsum.photos/seed/lead4/1200/800' },
+          { title: 'Estilo de Servicio', text: 'Robert K. Greenleaf (1970): El líder como servidor primero.', longContent: 'Prioriza el bienestar y desarrollo del equipo humano antes que las metas organizacionales, fomentando un crecimiento compartido.', icon: 'Heart', image: 'https://picsum.photos/seed/lead5/1200/800' }
         ]
       }
     },
@@ -312,67 +311,314 @@ export const COUNSELING_LESSON: Lesson = {
         ]
       }
     },
-    // --- CAPÍTULO III: METODOLOGÍA (FUSIONADO) ---
     {
       id: 'slide-16',
       type: 'visual-info',
       title: 'Capítulo III: Marco Metodológico',
-      subtitle: 'Diseño, Población y Muestra',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/method/800/600', position: 'right' },
-      content: 'La investigación adopta un enfoque cuantitativo descriptivo, fundamentado en el análisis estadístico de la realidad institucional para describir el impacto del liderazgo.',
-      bullets: [
-        'Paradigma Positivista / Cuantitativo.',
-        'Nivel Descriptivo y Diseño de Campo.',
-        'Población Total: 49 Sujetos (2 Directivos, 38 Docentes, 9 Administrativos).',
-        'Muestra: Censal (Se incluye la totalidad de la población por ser manejable).'
-      ]
+      subtitle: 'Enfoque, Diseño y Procedimientos',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
+      content: '“El marco metodológico, es la instancia referida a los métodos, a diversas reglas, registros, técnicas y protocolos con los cuales una Teoría y su Método calculan las magnitudes de lo real” (Balestrini, 2006, p 126).',
+      bullets: ['Recopilación objetiva de datos', 'Análisis estadístico riguroso', 'Diseño de proyecto factible']
     },
-    // --- RESTO DE LOS CAPÍTULOS ---
     {
-      id: 'slide-18',
-      type: 'quiz',
-      title: 'Validación y Confiabilidad',
-      subtitle: 'Rigor Científico',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/valid/800/600', position: 'left' },
+      id: 'slide-17',
+      type: 'stepped-overlay',
+      title: 'Desarrollo Metodológico',
+      subtitle: 'Fases, Población y Rigor Científico',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/method-details/1200/800', position: 'background' },
       interaction: {
-        type: 'multiple-choice',
-        options: [
-          { id: 'q1', label: 'Juicio de Expertos', feedback: 'Correcto. Tres expertos validaron el contenido.', isCorrect: true },
-          { id: 'q2', label: 'Alfa de Cronbach', feedback: 'Correcto. Se calculó la consistencia interna.', isCorrect: true },
-          { id: 'q3', label: 'Intuición Personal', feedback: 'Incorrecto.', isCorrect: false }
+        type: 'stepped-reveal',
+        revealItems: [
+          { 
+            title: 'Naturaleza y Enfoque', 
+            text: 'Paradigma Cuantitativo', 
+            longContent: 'Búsqueda de conocimientos basada en la recolección y análisis de datos. Sampieri (2010): "la investigación cuantitativa nos ofrece la posibilidad de generalizar los resultados... nos otorga control sobre los fenómenos". Usa medición numérica y análisis estadístico.', 
+            icon: 'Activity', 
+            image: 'https://picsum.photos/seed/quantitative/800/600' 
+          },
+          { 
+            title: 'Tipo y Diseño', 
+            text: 'Campo y Descriptiva', 
+            longContent: 'Investigación descriptiva centrada en observar características clave (Hernández et al, 2010). Diseño de campo: recopilación directa de datos originales desde la Unidad Educativa "Andrés Bello", sin manipular variables (Arias, 2012).', 
+            icon: 'Map', 
+            image: 'https://picsum.photos/seed/field-study/800/600' 
+          },
+          { 
+            title: 'Proyecto Factible', 
+            text: 'Fases del Modelo Operativo', 
+            longContent: 'Modalidad que formula proyectos viables para mejorar situaciones educativas (Martínez, 2022). Fases UPEL (2016): Diagnóstico (Etapa I), Factibilidad (Etapa II), Diseño (Etapa III), Ejecución (Etapa IV) y Evaluación.', 
+            icon: 'Lightbulb', 
+            image: 'https://picsum.photos/seed/planning/800/600' 
+          },
+          { 
+            title: 'Ejecución (9 Preguntas)', 
+            text: 'Principios de Acción de Cerda', 
+            longContent: '¿Qué hacer? (necesidades), ¿Para qué? (objetivos), ¿Por qué? (importancia), ¿Cómo? (actividades), ¿Dónde? (lugar), ¿Magnitud? (alcance), ¿Cuándo? (tiempo), ¿Quiénes? (equipo) y ¿Con qué? (recursos).', 
+            icon: 'ClipboardList', 
+            image: 'https://picsum.photos/seed/execution/800/600' 
+          },
+          { 
+            title: 'Población y Muestra', 
+            text: 'Censo de 49 Sujetos', 
+            longContent: 'Población total: 9 personas administrativas, 38 docentes y 2 directivos (Sampieri, p.65). Muestra censal: Se toma la totalidad de la población debido a su magnitud manejable (Hernández et al, 2014).', 
+            icon: 'Users', 
+            image: 'https://picsum.photos/seed/population/800/600' 
+          },
+          { 
+            title: 'Instrumentos y Variables', 
+            text: 'Escala Likert y Operacionalización', 
+            longContent: 'Cuestionario estructurado con escala Likert (Siempre, Casi Siempre, Algunas Veces, Casi Nunca, Nunca). Variables (Arias): características objeto de análisis. Dimensiones: aspectos fundamentales extraídos de la variable. Indicadores: señales de medición.', 
+            icon: 'FileText', 
+            image: 'https://picsum.photos/seed/likert/800/600' 
+          },
+          { 
+            title: 'Validación de Expertos', 
+            text: 'Juicio de Contenido', 
+            longContent: 'Uso de validez de criterio (Palella y Martins, 2012). Se considera la opinión de tres expertos en metodología para evaluar si el instrumento refleja correctamente la realidad que se intenta medir y pronosticar.', 
+            icon: 'CheckCircle', 
+            image: 'https://picsum.photos/seed/validation/800/600' 
+          },
+          { 
+            title: 'Cálculo de Confiabilidad', 
+            text: 'Alfa de Cronbach', 
+            longContent: 'Grado en que la aplicación produce resultados iguales (Hernández et al, 2010). Fórmula: α = [K/(K-1)] * [1 - (ΣSi²/St²)]. Rangos: 0.81-1.00 (Muy alta), 0.61-0.80 (Alta), 0.41-0.60 (Moderada).', 
+            icon: 'ShieldCheck', 
+            image: 'https://picsum.photos/seed/reliability/800/600' 
+          }
         ]
       }
     },
     {
+      id: 'slide-18',
+      type: 'visual-info',
+      title: 'Capítulo IV: Análisis y Resultados',
+      subtitle: 'Resultados del Trabajo de Campo',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/results-cover/1920/1080', position: 'background' },
+      content: 'Presentación detallada de los datos obtenidos a través del instrumento de 15 ítems aplicado a la muestra de 11 sujetos. El análisis se divide en tres dimensiones clave del liderazgo educativo según Bass, Avolio y Goleman.',
+      bullets: ['Dimensión 1: Liderazgo de los Directivos', 'Dimensión 2: Impacto en el Aprendizaje', 'Dimensión 3: Impulso mediante el Liderazgo']
+    },
+    {
       id: 'slide-19',
-      type: 'split-slider',
-      title: 'Capítulo IV: Resultados',
-      subtitle: 'Datos del Campo',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/chart/1200/800', position: 'background' },
+      type: 'chart-results',
+      title: 'Dimensión 1: Liderazgo de los Directivos',
+      subtitle: 'Ítems 1 al 5',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/light-bg/1200/800', position: 'background' },
       interaction: {
-        type: 'internal-slider',
+        type: 'charts',
         revealItems: [
-          { title: 'Liderazgo Directivo', text: 'Percepción docente.', longContent: 'Los datos muestran una necesidad de mayor acompañamiento pedagógico por parte de los directivos.', icon: 'PieChart', image: 'https://picsum.photos/seed/pie/800/600' },
-          { title: 'Clima Laboral', text: 'Motivación y Desempeño.', longContent: 'Un liderazgo inspirador correlaciona directamente con una mejor disposición a la formación docente.', icon: 'BarChart', image: 'https://picsum.photos/seed/bar/800/600' }
+          { 
+            title: '1. Acciones de desarrollo', 
+            text: '¿Se implementan acciones de liderazgo a directivos?', 
+            longContent: 'El 55% indica que NUNCA se implementan. Según Leithwood y Jantzi (2005), la carencia de liderazgo formativo puede traducirse en un vacío de dirección y visión institucional.',
+            icon: 'TrendingDown',
+            chartData: [
+              { label: 'Nunca', value: 55, color: '#ef4444' },
+              { label: 'A veces', value: 27, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '2. Formación Docente', 
+            text: '¿La dirección promueve formación constante?', 
+            longContent: 'Un 73% manifiesta que NUNCA se promueve. Fullan (2014) destaca que el desarrollo profesional en liderazgo e innovación es fundamental para el éxito de las reformas educativas.',
+            icon: 'BookOpen',
+            chartData: [
+              { label: 'Nunca', value: 73, color: '#ef4444' },
+              { label: 'A veces', value: 9, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '3. Motivación al logro', 
+            text: '¿Se llevan a cabo foros/charlas de motivación?', 
+            longContent: 'El 73% afirma que NUNCA. Pink (2009) argumenta que la motivación intrínseca es un factor clave para el éxito profesional y la innovación pedagógica.',
+            icon: 'Zap',
+            chartData: [
+              { label: 'Nunca', value: 73, color: '#ef4444' },
+              { label: 'A veces', value: 18, color: '#f59e0b' },
+              { label: 'Siempre', value: 9, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '4. Comunicación', 
+            text: '¿Existe buena comunicación directivo-docente?', 
+            longContent: 'El 55% responde NUNCA. Goleman (2006) argumenta que la comunicación es componente esencial del liderazgo efectivo para inspirar y generar pertenencia.',
+            icon: 'MessageCircle',
+            chartData: [
+              { label: 'Nunca', value: 55, color: '#ef4444' },
+              { label: 'A veces', value: 27, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '5. Coordinación Actividades', 
+            text: '¿Se coordinan actividades de comunicación?', 
+            longContent: 'El 45% NUNCA y el 55% A VECES. Kotter (2012) destaca que la coordinación es esencial para la alineación de objetivos y optimización del rendimiento.',
+            icon: 'Repeat',
+            chartData: [
+              { label: 'Nunca', value: 45, color: '#ef4444' },
+              { label: 'A veces', value: 55, color: '#f59e0b' },
+              { label: 'Siempre', value: 0, color: '#10b981' }
+            ]
+          }
         ]
       }
     },
     {
       id: 'slide-20',
-      type: 'visual-info',
-      title: 'Análisis Crítico',
-      subtitle: 'Interpretación de Datos',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/analyze/800/600', position: 'right' },
-      content: 'La correlación estadística demuestra que la falta de formación en liderazgo directivo genera una desmotivación en cascada que afecta el clima del aula.',
-      bullets: ['Desconexión directiva-docente', 'Impacto en planes de estudio', 'Necesidad de renovación estratégica']
+      type: 'chart-results',
+      title: 'Dimensión 2: Impacto en el Aprendizaje',
+      subtitle: 'Ítems 6 al 10',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/light-bg2/1200/800', position: 'background' },
+      interaction: {
+        type: 'charts',
+        revealItems: [
+          { 
+            title: '6. Seguimiento Aula', 
+            text: '¿Se realiza seguimiento al dominio de grupo?', 
+            longContent: '45% Nunca, 45% A veces. Hattie (2009) subraya la importancia del feedback continuo para mejorar el aprendizaje y ajustar la práctica pedagógica.',
+            icon: 'Users',
+            chartData: [
+              { label: 'Nunca', value: 45, color: '#ef4444' },
+              { label: 'A veces', value: 45, color: '#f59e0b' },
+              { label: 'Siempre', value: 10, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '7. Análisis Comportamiento', 
+            text: '¿Se analiza comportamiento ante el dominio docente?', 
+            longContent: 'Un 46% SIEMPRE, pero el 36% Nunca. Vygotsky (1978) argumenta que entender cómo los alumnos responden permite facilitar el aprendizaje eficazmente.',
+            icon: 'GraduationCap',
+            chartData: [
+              { label: 'Nunca', value: 36, color: '#ef4444' },
+              { label: 'A veces', value: 18, color: '#f59e0b' },
+              { label: 'Siempre', value: 46, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '8. Liderazgo Docente', 
+            text: '¿La directiva promueve liderazgo docente en aula?', 
+            longContent: 'Un 46% indica que NUNCA. Goleman (2006) enfatiza que el liderazgo crea un ambiente colaborativo que impacta el éxito educativo.',
+            icon: 'Star',
+            chartData: [
+              { label: 'Nunca', value: 46, color: '#ef4444' },
+              { label: 'A veces', value: 36, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '9. Estrategias Aprendizaje', 
+            text: '¿Se impulsan estrategias para fomentar liderazgo?', 
+            longContent: '36% Nunca, 36% A veces. Gardner (2006) resalta que metodologías activas involucran al estudiante y empoderan su toma de decisiones.',
+            icon: 'Lightbulb',
+            chartData: [
+              { label: 'Nunca', value: 36, color: '#ef4444' },
+              { label: 'A veces', value: 36, color: '#f59e0b' },
+              { label: 'Siempre', value: 28, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '10. Grupos Hostiles', 
+            text: '¿Muestran dominio ante grupos hostiles?', 
+            longContent: '36% Nunca, 46% A veces. Rogers (1951) sostiene que el manejo adecuado de conflictos es esencial para facilitar un aprendizaje efectivo.',
+            icon: 'ShieldAlert',
+            chartData: [
+              { label: 'Nunca', value: 36, color: '#ef4444' },
+              { label: 'A veces', value: 46, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          }
+        ]
+      }
     },
     {
       id: 'slide-21',
+      type: 'chart-results',
+      title: 'Dimensión 3: Impulso mediante Liderazgo',
+      subtitle: 'Ítems 11 al 15',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/light-bg3/1200/800', position: 'background' },
+      interaction: {
+        type: 'charts',
+        revealItems: [
+          { 
+            title: '11. Interacción Asertiva', 
+            text: '¿Hay interacción asertiva directivo-docente?', 
+            longContent: '55% Nunca. La asertividad es componente esencial del liderazgo efectivo según Goleman (2006) para evitar conflictos.',
+            icon: 'Handshake',
+            chartData: [
+              { label: 'Nunca', value: 55, color: '#ef4444' },
+              { label: 'A veces', value: 36, color: '#f59e0b' },
+              { label: 'Siempre', value: 9, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '12. Gestión Docente', 
+            text: '¿Es prioridad el impulso de la gestión docente?', 
+            longContent: '45% Nunca, 45% Siempre. Fullan (2014) destaca relevancia de gestión efectiva y capacitación continua para éxito educativo.',
+            icon: 'Flag',
+            chartData: [
+              { label: 'Nunca', value: 45, color: '#ef4444' },
+              { label: 'A veces', value: 10, color: '#f59e0b' },
+              { label: 'Siempre', value: 45, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '13. Motivación al Logro', 
+            text: '¿Se percibe motivación común en directivos?', 
+            longContent: '55% Nunca. Pink (2009) resalta motivación intrínseca como motor del propósito laboral y cultura organizacional.',
+            icon: 'Award',
+            chartData: [
+              { label: 'Nunca', value: 55, color: '#ef4444' },
+              { label: 'A veces', value: 27, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '14. Resultados Positivos', 
+            text: '¿Obtienen resultados mediante liderazgo eficaz?', 
+            longContent: '36% Siempre, 46% A veces. Fullan (2001): el liderazgo desempeña un papel crucial en la influencia del rendimiento académico.',
+            icon: 'CheckCircle',
+            chartData: [
+              { label: 'Nunca', value: 18, color: '#ef4444' },
+              { label: 'A veces', value: 46, color: '#f59e0b' },
+              { label: 'Siempre', value: 36, color: '#10b981' }
+            ]
+          },
+          { 
+            title: '15. Planes de Motivación', 
+            text: '¿Se impulsan planes para armonizar el ambiente?', 
+            longContent: '55% Nunca. Kotter (2012) subraya que la motivación es fundamental para el éxito de cualquier organización y calidad educativa.',
+            icon: 'Sparkles',
+            chartData: [
+              { label: 'Nunca', value: 55, color: '#ef4444' },
+              { label: 'A veces', value: 27, color: '#f59e0b' },
+              { label: 'Siempre', value: 18, color: '#10b981' }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      id: 'slide-22',
+      type: 'visual-info',
+      title: 'Análisis Crítico de Resultados',
+      subtitle: 'Interpretación de Datos',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/analyze/800/600', position: 'right' },
+      content: 'Los resultados revelan debilidades críticas en formación directiva (55% brecha) y capacitación docente (73% déficit). La falta de comunicación asertiva (55%) sugiere un aislamiento organizacional.',
+      bullets: [
+        'Déficit estructural en formación de líderes',
+        'Necesidad urgente de espacios motivacionales',
+        'Brecha en gestión de grupos hostiles (36%)',
+        'Falta de sincronía directivo-docente'
+      ]
+    },
+    {
+      id: 'slide-23',
       type: 'visual-info',
       title: 'Capítulo V: Conclusiones',
       subtitle: 'Síntesis Final',
       visual: { type: 'image', source: 'https://picsum.photos/seed/conc/800/600', position: 'left' },
-      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica de la institución.',
+      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica de la institución. Sin un líder formativo, las innovaciones se ven truncadas.',
       bullets: [
         'El liderazgo efectivo mejora el aprendizaje.',
         'La formación directiva es una necesidad urgente.',
@@ -380,7 +626,7 @@ export const COUNSELING_LESSON: Lesson = {
       ]
     },
     {
-      id: 'slide-22',
+      id: 'slide-24',
       type: 'reflection',
       title: 'Recomendaciones',
       subtitle: 'Hacia la Excelencia',
@@ -388,7 +634,7 @@ export const COUNSELING_LESSON: Lesson = {
       content: '¿De qué manera cree usted que un cambio en el liderazgo directivo impactaría su propia aula?',
     },
     {
-      id: 'slide-23',
+      id: 'slide-25',
       type: 'stepped-overlay',
       title: 'Capítulo VI: La Propuesta',
       subtitle: 'Programa de Formación',
@@ -402,7 +648,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-24',
+      id: 'slide-26',
       type: 'visual-info',
       title: 'Pensamiento Final',
       subtitle: 'Cierre de la Defensa',
@@ -410,12 +656,12 @@ export const COUNSELING_LESSON: Lesson = {
       content: '"El liderazgo no se trata de estar al mando, se trata de cuidar a los que están a tu mando." - Simon Sinek'
     },
     {
-      id: 'slide-25',
+      id: 'slide-27',
       type: 'visual-info',
       title: '¡Gracias por su atención!',
       subtitle: 'Defensa de Tesis Exitosa',
       visual: { type: 'image', source: 'https://picsum.photos/seed/sky/1200/800', position: 'background' },
-      content: 'Maestrante Eliseo Ortega. Maestría en Educación - Mención Gerencia Educativa. Universidad Nacional Abierta.'
+      content: 'Maestrante Eliseo Ortega. Gerencia Educativa. Universidad Nacional Abierta.'
     }
   ]
 };
