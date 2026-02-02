@@ -61,7 +61,7 @@ export const COUNSELING_LESSON: Lesson = {
       interaction: {
         type: 'side-reveal',
         revealItems: [
-          { title: 'Cap. I-II', text: 'Planteamiento y Teoría', longContent: 'Definición del problema y bases teóricas del liderazgo transformacional.', icon: 'BookOpen', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4' },
+          { title: 'Cap. I-II', text: 'Planteamiento y Teoría', longContent: 'Definición del problema y bases teóricas del liderazgo transformacional.', icon: 'BookOpen', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2f4dccbb-7dd6-4dd9-8656-0d8d07974795_rw_1920.jpg?h=c9957fb146d3623b507a785bf2792a91' },
           { title: 'Cap. III-IV', text: 'Metodología y Análisis', longContent: 'Enfoque cuantitativo y presentación de los resultados estadísticos.', icon: 'BarChart3', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/1026c481-788a-4802-a675-a661eb4f3788_rw_1920.jpg?h=b4e6a7e090b430b65eafc3db10aa614f' },
           { title: 'Cap. V-VI', text: 'Propuesta y Cierre', longContent: 'Conclusiones y la propuesta de formación en liderazgo directivo.', icon: 'Lightbulb', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b1a6143a-7316-4d39-bd6b-61a6242d5748_rw_1920.jpg?h=b1e347dd27c67cb8d3ea5b7547128eb1' }
         ]
@@ -96,7 +96,7 @@ export const COUNSELING_LESSON: Lesson = {
           { 
             title: 'Planteamiento del Problema', 
             text: 'Crisis de Liderazgo', 
-            longContent: 'La falta de un liderazgo directivo efectivo se identifica como un factor crítico que deteriora la calidad educativa y el rendimiento académico en la institución.', 
+            longContent: 'La falta de un liderazgo directivo efectivo se identifica como un factor crítico que deteriora la calidad educativa y el rendimiento académico en la institution.', 
             icon: 'AlertTriangle', 
             image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/9f0e9592-777b-4b1b-a365-b573df645b9e_rw_1920.jpg?h=d0b31c599ddade66a9bcd1562d38b570' 
           },
@@ -266,35 +266,35 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Proceso y Habilidad', 
             longContent: 'El liderazgo es el proceso y habilidad para guiar e influir en un grupo para lograr resultados, mejorando el potencial de los empleados y el ambiente de desempeño.', 
             icon: 'Zap',
-            image: 'URL_DE_LA_IMAGEN_AQUI' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cac5597a-3274-40d2-9234-5dbb9aa6f38d_rw_1920.jpg?h=e984460d0ce1f9c43c3f2aedb6f29f38' 
           },
           { 
             title: 'Terry (2007)', 
             text: 'Práctica Ética y Social', 
             longContent: 'Surge cuando individuos impulsados por la esperanza enfrentan situaciones no auténticas y, con valentía, actúan en conjunto con sus seguidores para darles verdadera dimensión.', 
             icon: 'Shield',
-            image: 'URL_DE_LA_IMAGEN_AQUI'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e43be13d-9b70-40b7-b7c4-e49fe3fc26d0_rw_1920.jpg?h=226adfec44769836ab9547c376bbafb5'
           },
           { 
             title: 'Hurtado (2019)', 
             text: 'Autoridad Voluntaria', 
             longContent: 'Capacidad de ejercer influencia mediante habilidades. El líder gana autoridad voluntaria de la comunidad para guiar, inspirar y comprometer a sus miembros.', 
             icon: 'Target',
-            image: 'URL_DE_LA_IMAGEN_AQUI'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/bb2005b6-6cdb-42bb-be14-9dd320b3f107_rw_1920.jpg?h=2cbfe6bac1acd31050fd0ccd8a8254a2'
           },
           { 
             title: 'Koontz & Weihrich', 
             text: 'Esfuerzo Voluntario', 
             longContent: 'Forma en que cada gerente emprende sus funciones para influir sobre las personas bajo su cargo, logrando que su esfuerzo contribuya a las metas organizacionales.', 
             icon: 'Briefcase',
-            image: 'URL_DE_LA_IMAGEN_AQUI'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/149a6d20-2ac4-4ad3-97e9-0f8bc7b73023_rw_1920.jpg?h=09adf007fcf33659acf1933a75510ca0'
           },
           { 
             title: 'Chiavenato (1993)', 
             text: 'Influencia Interpersonal', 
             longContent: 'Influencia ejercida en una situación, dirigida a través del proceso de comunicación humana a la consecución de uno o diversos objetivos específicos.', 
             icon: 'MessageCircle',
-            image: 'URL_DE_LA_IMAGEN_AQUI'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/c6b0db84-bab3-45be-85f1-ee06f74cde0d_rw_1920.jpg?h=f217c7a516b9626112d4fef836cedc0c'
           }
         ]
       }
@@ -308,11 +308,11 @@ export const COUNSELING_LESSON: Lesson = {
       interaction: {
         type: 'internal-slider',
         revealItems: [
-          { title: 'Estilo Autocrático', text: 'Control absoluto y decisiones sin consulta.', longContent: 'Efectivo en situaciones de crisis extrema, pero a menudo genera resistencia y baja motivación en el equipo docente a largo plazo.', icon: 'Lock', image: 'https://picsum.photos/seed/lead1/1200/800' },
-          { title: 'Estilo Transformacional', text: 'Bernard Morris Bass: Inspiración para superar expectativas.', longContent: 'El líder busca crear cambios positivos significativos motivando a sus seguidores a trascender sus propios intereses por el bien común.', icon: 'Zap', image: 'https://picsum.photos/seed/lead2/1200/800' },
-          { title: 'Estilo Transaccional', text: 'Carl R. Rogers (1957): Intercambio de beneficios mutuos.', longContent: 'Basado en transacciones prácticas entre líder y seguidores para satisfacer necesidades inmediatas de ambas partes.', icon: 'RefreshCw', image: 'https://picsum.photos/seed/lead3/1200/800' },
-          { title: 'Estilo Laissez-faire', text: 'Hersey & Blanchard (1969): Autonomía total para el equipo.', longContent: 'El líder delega totalmente la toma de decisiones, confiando en la madurez y alta capacidad profesional de sus subordinados.', icon: 'Coffee', image: 'https://picsum.photos/seed/lead4/1200/800' },
-          { title: 'Estilo de Servicio', text: 'Robert K. Greenleaf (1970): El líder como servidor primero.', longContent: 'Prioriza el bienestar y desarrollo del equipo humano antes que las metas organizacionales, fomentando un crecimiento compartido.', icon: 'Heart', image: 'https://picsum.photos/seed/lead5/1200/800' }
+          { title: 'Estilo Autocrático', text: 'Control absoluto y decisiones sin consulta.', longContent: 'Efectivo en situaciones de crisis extrema, pero a menudo genera resistencia y baja motivación en el equipo docente a largo plazo.', icon: 'Lock', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/0f355173-9093-4b70-b5b3-0d2d0761fb0e_rw_1920.jpg?h=728c0d86e82678fa086f6d18975c52d9' },
+          { title: 'Estilo Transformacional', text: 'Bernard Morris Bass: Inspiración para superar expectativas.', longContent: 'El líder busca crear cambios positivos significativos motivando a sus seguidores a trascender sus propios intereses por el bien común.', icon: 'Zap', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b8cf86d5-b17e-400b-98b1-775eeb974c80_rw_1920.jpg?h=5f36dbd482a2f1905d311bc9833c76f4' },
+          { title: 'Estilo Transaccional', text: 'Carl R. Rogers (1957): Intercambio de beneficios mutuos.', longContent: 'Basado en transacciones prácticas entre líder y seguidores para satisfacer necesidades inmediatas de ambas partes.', icon: 'RefreshCw', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b943c0b1-3c85-4ca1-963a-0e029047cfd8_rw_1920.jpg?h=c05f0d147c3838c26d2fb8fa6f1e9e3a' },
+          { title: 'Estilo Laissez-faire', text: 'Hersey & Blanchard (1969): Autonomía total para el equipo.', longContent: 'El líder delega totalmente la toma de decisiones, confiando en la madurez y alta capacidad profesional de sus subordinados.', icon: 'Coffee', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/443feac4-d842-4793-9b06-9af58a2c601a_rw_1920.jpg?h=63634cb46dd01d54fb2d868a28e84f65' },
+          { title: 'Estilo de Servicio', text: 'Robert K. Greenleaf (1970): El líder como servidor primero.', longContent: 'Prioriza el bienestar y desarrollo del equipo humano antes que las metas organizacionales, fomentando un crecimiento compartido.', icon: 'Heart', image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e7548bb4-b684-48e1-a3e6-2bb031f8fc41_rw_1920.jpg?h=6693086b6effa3fc95b396e155e6b22c' }
         ]
       }
     },
@@ -330,21 +330,21 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Derecho Humano Fundamental', 
             longContent: 'La educación es democrática, gratuita y obligatoria. El Estado asume el interés máximo como instrumento del conocimiento científico y tecnológico.', 
             icon: 'Gavel', 
-            image: 'https://picsum.photos/seed/const/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/fe63fe3d-fee6-4bc6-9980-58781f1afc3e_rw_1920.jpg?h=819906d9b83cddfdfd7f295edce3ff9e' 
           },
           { 
             title: 'Ley de Educación (LOE)', 
             text: 'Art. 3, 38, 39, 81', 
             longContent: 'Promueve la democracia participativa y responsabilidad social. Establece la educación continuada como proceso integral y el perfil del directivo.', 
             icon: 'FileText', 
-            image: 'https://picsum.photos/seed/loe/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/f79cd2e1-1b98-4a14-b098-b57f93a395c1_rw_1920.jpg?h=2b478b4b1429420e90dfe198b490a884' 
           },
           { 
             title: 'Reglamento LOE', 
             text: 'Art. 68 y 69', 
             longContent: 'El personal directivo se integra por director y subdirector. El director actúa como gerente natural y debe actualizarse en conducta organizacional.', 
             icon: 'Briefcase', 
-            image: 'https://picsum.photos/seed/manager/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/bbfb54cb-904a-4979-9dbd-b1c4ad4a33da_rw_1920.jpg?h=eafe51090d2903ea9ae720c7dd118e12' 
           }
         ]
       }
@@ -354,7 +354,7 @@ export const COUNSELING_LESSON: Lesson = {
       type: 'visual-info',
       title: 'Capítulo III: Marco Metodológico',
       subtitle: 'Enfoque y Diseño',
-      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2f4dccbb-7dd6-4dd9-8656-0d8d07974795_rw_1920.jpg?h=c9957fb146d3623b507a785bf2792a91', position: 'background' },
       content: 'Metodología, técnicas y protocolos utilizados para recolectar y analizar los datos de la investigación.',
       bullets: ['Recopilación objetiva', 'Análisis riguroso', 'Proyecto factible']
     },
@@ -372,70 +372,70 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Paradigma Cuantitativo', 
             longContent: 'Búsqueda de conocimientos basada en la recolección y análisis de datos. Sampieri (2010): "la investigación cuantitativa nos ofrece la posibilidad de generalizar los resultados... nos otorga control sobre los fenómenos". Usa medición numérica y análisis estadístico.', 
             icon: 'Activity', 
-            image: 'https://picsum.photos/seed/quantitative/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/9f069bed-e0d2-4435-9f9d-e103531fa68a_rw_1200.jpg?h=10432515ab1bd346002db13aee382b83' 
           },
           { 
             title: 'Tipo y Diseño', 
             text: 'Campo y Descriptiva', 
             longContent: 'Investigación descriptiva centrada en observar características clave (Hernández et al, 2010). Diseño de campo: recopilación directa de datos originales desde la Unidad Educativa "Andrés Bello", sin manipular variables (Arias, 2012).', 
             icon: 'Map', 
-            image: 'https://picsum.photos/seed/field-study/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/7f16178f-7273-47a9-b66b-97274d6cd03c_rw_1200.jpg?h=90d4ef43db582139595ae02f03768aef' 
           },
           { 
             title: 'Proyecto Factible', 
             text: 'Fases del Modelo Operativo', 
             longContent: 'Modalidad que formula proyectos viables para mejorar situaciones educativas (Martínez, 2022). Fases UPEL (2016): Diagnóstico (Etapa I), Factibilidad (Etapa II), Diseño (Etapa III), Ejecución (Etapa IV) y Evaluación.', 
             icon: 'Lightbulb', 
-            image: 'https://picsum.photos/seed/planning/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/15549feb-4341-40b7-903c-1b440955977f_rw_1200.jpg?h=4f01753767676e0c9c7a3856e9bb1c2b' 
           },
           { 
             title: 'Ejecución (9 Preguntas)', 
             text: 'Principios de Acción de Cerda', 
             longContent: '¿Qué hacer? (necesidades), ¿Para qué? (objetivos), ¿Por qué? (importancia), ¿Cómo? (actividades), ¿Dónde? (lugar), ¿Magnitud? (alcance), ¿Cuándo? (tiempo), ¿Quiénes? (equipo) y ¿Con qué? (recursos).', 
             icon: 'ClipboardList', 
-            image: 'https://picsum.photos/seed/execution/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b4ca4b4a-ed0d-44d2-a200-55027f804c06_rw_1200.jpg?h=7d32acebb80cdb46a7f2a3e270162c9e' 
           },
           { 
             title: 'Población y Muestra', 
             text: 'Censo de 49 Sujetos', 
             longContent: 'Población total: 9 personas administrativas, 38 docentes y 2 directivos (Sampieri, p.65). Muestra censal: Se toma la totalidad de la población debido a su magnitud manejable (Hernández et al, 2014).', 
             icon: 'Users', 
-            image: 'https://picsum.photos/seed/population/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/9768bea4-0411-4c72-a772-9dca864a639f_rw_1200.jpg?h=025b4784132c0d0024ab1b1b0fc8d196' 
           },
           { 
             title: 'Instrumentos y Variables', 
             text: 'Escala Likert y Operacionalización', 
             longContent: 'Cuestionario estructurado con escala Likert (Siempre, Casi Siempre, Algunas Veces, Casi Nunca, Nunca). Variables (Arias): características objeto de análisis. Dimensiones: aspectos fundamentales extraídos de la variable. Indicadores: señales de medición.', 
             icon: 'FileText', 
-            image: 'https://picsum.photos/seed/likert/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/680447af-db0c-4eac-8d1e-8ef82cb0de1f_rw_1200.jpg?h=145e55214c5778c406f18d1fd8c11882' 
           },
           { 
             title: 'Dimensión', 
             text: 'Aspecto fundamental extraído del análisis', 
             longContent: 'Arias expresa que una dimensión es una característica o aspecto fundamental que se extrae o se identifica a partir del análisis o segmentación de una variable más amplia y compleja.', 
             icon: 'FileText', 
-            image: 'https://picsum.photos/seed/likert/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/60989910-3ce4-4d11-b854-158b52744faa_rw_1200.jpg?h=37a5ec126e2c540543b5c269dafa6eb8' 
           },
           { 
             title: 'Indicador', 
             text: 'Método de medición para examinar variables', 
             longContent: 'Un indicador es un síntoma, una señal o un método de medición que se utiliza para examinar y cuantificar una variable o sus dimensiones.', 
             icon: 'FileText', 
-            image: 'https://picsum.photos/seed/likert/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/6d65d3fd-ef6e-48b4-862f-028c98df0ff8_rw_1200.jpg?h=bffcd2fc6fd591704e02c0b68036b56b' 
           },
           { 
             title: 'Validación de Expertos', 
             text: 'Juicio de Contenido', 
             longContent: 'Uso de validez de criterio. Se considera la opinión de tres expertos en metodología para evaluar si el instrumento refleja correctamente la realidad.', 
             icon: 'CheckCircle', 
-            image: 'https://picsum.photos/seed/validation/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/8e8e66a3-3a93-44f9-8cc0-7483dc656749_rw_1200.jpg?h=96fd872c599067a7bd2aa8bb78b3707e' 
           },
           { 
             title: 'Cálculo de Confiabilidad', 
             text: 'Alfa de Cronbach', 
             longContent: 'Grado en que la aplicación produce resultados iguales. Fórmula: α = [K/(K-1)] * [1 - (ΣSi²/St²)].', 
             icon: 'ShieldCheck', 
-            image: 'https://picsum.photos/seed/reliability/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/92fe8744-94fe-46d7-bc18-632cf42a9417_rw_1200.jpg?h=78f46232286c64b1e38f122778a6b1d2' 
           }
         ]
       }
@@ -445,7 +445,7 @@ export const COUNSELING_LESSON: Lesson = {
       type: 'visual-info',
       title: 'Capítulo IV: Análisis y Resultados',
       subtitle: 'Trabajo de Campo',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/results-cover/1920/1080', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/552e45a3-62f3-4dc1-ae80-4490f38a46ad_rw_1920.jpg?h=f5944c7827ad5f9117540fe29702c271', position: 'background' },
       content: 'Presentación detallada de los datos obtenidos a través del instrumento aplicado a la muestra.',
       bullets: ['Liderazgo Directivo', 'Impacto Aprendizaje', 'Impulso mediante Liderazgo']
     },
@@ -655,7 +655,7 @@ export const COUNSELING_LESSON: Lesson = {
       type: 'chart-results',
       title: 'Análisis Crítico de Resultados',
       subtitle: 'Hallazgos Clave',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/analyze-crit/1200/800', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e565bba1-7270-4a31-835e-78463d229fdc_rw_1920.jpg?h=002823cba329d004367a2c18edbafe86', position: 'background' },
       interaction: {
         type: 'charts',
         revealItems: [
@@ -664,6 +664,7 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Hallazgo Crítico', 
             longContent: 'Existe un déficit estructural significativo. La falta de acciones de desarrollo para directivos dificulta la toma de decisiones informadas y la gestión eficiente de equipos docentes.',
             icon: 'TrendingDown',
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e565bba1-7270-4a31-835e-78463d229fdc_rw_1920.jpg?h=002823cba329d004367a2c18edbafe86',
             chartData: [
               { label: 'Brecha', value: 55, color: '#ef4444' },
               { label: 'Cumplimiento', value: 45, color: '#cbd5e1' }
@@ -674,6 +675,7 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Hallazgo Crítico', 
             longContent: 'Un 73% señala que no se promueve formación constante. Esto genera desactualización docente y desconexión con las mejores prácticas educativas internacionales.',
             icon: 'BookOpen',
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/48c4f8a7-9a80-4a36-b6d8-7a2bd4fcb281_rw_1920.jpg?h=0d09c2aac678312562d68395027a6f95',
             chartData: [
               { label: 'Falta Formación', value: 73, color: '#ef4444' },
               { label: 'Actualizados', value: 27, color: '#cbd5e1' }
@@ -684,6 +686,7 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Hallazgo Crítico', 
             longContent: 'La carencia de foros de motivación al logro impacta directamente en la moral y aumenta el burnout (agotamiento emocional) del personal docente.',
             icon: 'Zap',
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/3b06aa10-8777-4def-9a22-d16d1d96a553_rw_1920.png?h=8f42dc3053ad1cb9275e8ce4d20cb80b',
             chartData: [
               { label: 'Sin Apoyo', value: 73, color: '#ef4444' },
               { label: 'Motivados', value: 27, color: '#cbd5e1' }
@@ -692,8 +695,9 @@ export const COUNSELING_LESSON: Lesson = {
           { 
             title: '4. Comunicación Deficiente (55%)', 
             text: 'Hallazgo Crítico', 
-            longContent: 'La falta de canales asertivos entre directivos y docentes genera malentendidos y conflictos, deteriorando el clima de confianza necesario para el aprendizaje.',
+            longContent: 'La falta de canales asertivos entre directivos and docentes genera malentendidos y conflictos, deteriorando el clima de confianza necesario para el aprendizaje.',
             icon: 'MessageCircle',
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2c7d0dea-bf63-4c62-ab10-3d0c858d893c_rw_1920.jpg?h=7f9dee2dea82f66bbe18c0df74b1a50e',
             chartData: [
               { label: 'Nunca buena', value: 55, color: '#ef4444' },
               { label: 'Asertiva', value: 45, color: '#cbd5e1' }
@@ -707,7 +711,7 @@ export const COUNSELING_LESSON: Lesson = {
       type: 'visual-info',
       title: 'Capítulo V: Conclusiones',
       subtitle: 'Síntesis Final',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/conc/800/600', position: 'left' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/24a8e127-b60b-4640-993e-0cf88d42eaae_rw_1920.jpg?h=5df60a30676ad832b3193f3ae436e227', position: 'background' },
       content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica.',
       bullets: ['Liderazgo efectivo', 'Formación urgente', 'Comunicación asertiva']
     },
@@ -717,7 +721,7 @@ export const COUNSELING_LESSON: Lesson = {
       title: 'Recomendaciones',
       subtitle: 'Plan de Mejora',
       content: 'Estrategias sugeridas para mejorar el liderazgo directivo y docente.',
-      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'right' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2f4dccbb-7dd6-4dd9-8656-0d8d07974795_rw_1920.jpg?h=c9957fb146d3623b507a785bf2792a91', position: 'right' },
       interaction: {
         type: 'hotspots',
         revealItems: [
@@ -771,7 +775,7 @@ export const COUNSELING_LESSON: Lesson = {
       type: 'visual-info',
       title: 'Capítulo VI: PROPUESTA DE INVESTIGACIÓN',
       subtitle: 'Gerencia y Liderazgo',
-      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e986831c-d749-47cd-b170-6f825f7faef7_rw_1920.jpg?h=656f4fb76992ab88fb0c2417c0e4112f', position: 'background' },
       content: 'Reimaginando el futuro educativo a través de la formación.'
     },
     {
@@ -783,8 +787,8 @@ export const COUNSELING_LESSON: Lesson = {
       interaction: {
         type: 'split-interactive',
         revealItems: [
-          { title: 'Exposición de Motivos', text: 'Calidad de la enseñanza...', longContent: 'La preocupación por la calidad de la enseñanza...', icon: 'FileText' },
-          { title: 'Justificación', text: 'Fundamentos de la propuesta...', longContent: 'Los alarmantes hallazgos surgidos de la evaluación...', icon: 'Lightbulb' }
+          { title: 'Exposición de Motivos', text: 'Calidad de la enseñanza...', longContent: 'La preocupación por la calidad de la enseñanza se ha intensificado en el contexto educativo global, y en particular en Venezuela, donde las crisis económicas, políticas y sociales han afectado considerablemente el funcionamiento del sistema educativo. ', icon: 'FileText' },
+          { title: 'Justificación', text: 'Fundamentos de la propuesta...', longContent: 'La justificación de esta propuesta se fundamenta en los hallazgos. La encuesta reveló un déficit estructural significativo en el desarrollo del liderazgo y la formación continua de los docentes, con un 55% de los encuestados indicando la falta de acciones para fomentar el liderazgo y un 73% señalando la ausencia de promoción de oportunidades para la formación continua. ', icon: 'Lightbulb' }
         ]
       }
     },
@@ -798,7 +802,7 @@ export const COUNSELING_LESSON: Lesson = {
         type: 'grid-cards',
         revealItems: [
           { 
-            title: 'TALLER 1: Liderazgo Transformacional', 
+            title: 'TALLER 1:\nLiderazgo Transformacional', 
             text: 'Eleva las necesidades y motivaciones de los seguidores mediante inspiración.', 
             longContent: `OBJETIVO: Capacitar a los docentes en conceptos y prácticas de liderazgo transformacional.
 
@@ -815,10 +819,10 @@ CRONOGRAMA (2 HORAS):
 
 RECURSOS: Proyector, PC, material impreso de casos.`, 
             icon: 'Zap',
-            image: 'https://picsum.photos/seed/trans-lead/1200/800'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b94fe0dc-7830-432b-9bc5-150bf43f7c98_rw_1920.jpg?h=6c429344070b1123e5257c3f43cb2175'
           },
           { 
-            title: 'TALLER 2: Liderazgo Situacional', 
+            title: 'TALLER 2:\nLiderazgo Situacional', 
             text: 'Ajuste del estilo de liderazgo según el nivel de madurez de los seguidores.', 
             longContent: `OBJETIVO: Capacitar a los docentes en el uso del liderazgo situacional según las necesidades de sus estudiantes.
 
@@ -835,10 +839,10 @@ CRONOGRAMA (2 HORAS):
 
 RECURSOS: Proyector, PC, cuestionarios de autoevaluación.`, 
             icon: 'RefreshCw',
-            image: 'https://picsum.photos/seed/sit-lead/1200/800'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/c1cf535d-f9f1-4635-8d27-973e517ad690_rw_1920.jpg?h=314c9b1dd985a17f3c3834ab6bd7690e'
           },
           { 
-            title: 'TALLER 3: Liderazgo Emocional', 
+            title: 'TALLER 3:\nLiderazgo Emocional', 
             text: 'Reconocimiento, regulación y gestión de emociones para un aprendizaje efectivo.', 
             longContent: `OBJETIVO: Capacitar a los docentes en la importancia de reconocer y gestionar emociones propias y ajenas.
 
@@ -855,10 +859,10 @@ CRONOGRAMA (2 HORAS):
 
 RECURSOS: PC, proyector, tarjetas de emociones.`, 
             icon: 'Heart',
-            image: 'https://picsum.photos/seed/emot-lead/1200/800'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/bb0c069e-5d3a-4aee-a86d-530cc778beb1_rw_1920.jpg?h=9edcb121dd3d875328431dad6aff2963'
           },
           { 
-            title: 'TALLER 4: Liderazgo Colaborativo', 
+            title: 'TALLER 4:\nLiderazgo Colaborativo', 
             text: 'Maximización de recursos mediante la cooperación activa y la participación.', 
             longContent: `OBJETIVO: Promover la cooperación y la participación activa en el aula y comunidad educativa.
 
@@ -875,7 +879,7 @@ CRONOGRAMA (2 HORAS):
 
 RECURSOS: Proyector, PC, materiales para dinámicas (rompecabezas).`, 
             icon: 'Users',
-            image: 'https://picsum.photos/seed/colab-lead/1200/800'
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b24e0f28-362b-4b88-88cc-27d3f8957a32_rw_1920.jpg?h=3ce19d9a6973ccdb553566d0fe7069d4'
           }
         ]
       }
@@ -885,15 +889,15 @@ RECURSOS: Proyector, PC, materiales para dinámicas (rompecabezas).`,
       type: 'visual-info',
       title: 'Pensamiento Final',
       subtitle: 'Cierre',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/final/1200/800', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e1d40f82-eff3-4d47-ac9c-4d5bb40ee8c5_rw_1920.jpg?h=49ca05fcc61e4b1806c1466abc94e6f5', position: 'background' },
       content: '"El liderazgo no se trata de estar al mando, se trata de cuidar a los que están a tu mando." - Simon Sinek'
     },
     {
       id: 'slide-30',
       type: 'visual-info',
       title: '¡Gracias por su atención!',
-      subtitle: 'Defensa de Tesis Exitosa',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/sky/1200/800', position: 'background' },
+      subtitle: 'Defensa de Tesis ',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b28ed51c-a584-47d8-9028-0f1b5e5b0e23_rw_1920.jpg?h=718511c9422e36d6b9b6deeb4e15180d', position: 'background' },
       content: 'Maestrante Eliseo Ortega. Universidad Nacional Abierta.'
     }
   ]

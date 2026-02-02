@@ -1,5 +1,5 @@
 {
-  "name": "presentacion-tdg---eliseo-ortega",
+  "name": "liderazgo-educativo---eliseo-ortega",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,10 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "lucide-react": "0.344.0",
-    "zustand": "^5.0.10"
+    "lucide-react": "^0.563.0",
+    "react-dom": "^19.2.4",
+    "react": "^19.2.4",
+    "zustand": "^5.0.11"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

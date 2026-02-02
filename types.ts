@@ -63,25 +63,6 @@ export interface DragCategory {
   title: string;
 }
 
-export interface Slide {
-  id: string;
-  type: SlideType;
-  title: string;
-  subtitle?: string;
-  visual: SlideVisual;
-  content?: string;
-  bullets?: string[];
-  interaction?: {
-    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards' | 'charts' | 'split-interactive';
-    options?: SlideOption[];
-    revealItems?: RevealItem[];
-    puzzleItems?: PuzzleItem[];
-    dragItems?: DragItem[];
-    dragCategories?: DragCategory[];
-  };
-  timelineEvents?: TimelineEvent[];
-}
-
 export interface SlideOption {
   id: string;
   label: string;
@@ -100,6 +81,25 @@ export interface PuzzleItem {
   id: string;
   term: string;
   definition: string;
+}
+
+export interface Slide {
+  id: string;
+  type: SlideType;
+  title: string;
+  subtitle?: string;
+  visual: SlideVisual;
+  content?: string;
+  bullets?: string[];
+  interaction?: {
+    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards' | 'charts' | 'split-interactive';
+    options?: SlideOption[];
+    revealItems?: RevealItem[];
+    puzzleItems?: PuzzleItem[];
+    dragItems?: DragItem[];
+    dragCategories?: DragCategory[];
+  };
+  timelineEvents?: TimelineEvent[];
 }
 
 export interface Lesson {

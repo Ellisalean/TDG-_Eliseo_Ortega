@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Slide, RevealItem, ChartData } from '../types';
 import * as LucideIcons from 'lucide-react';
@@ -60,24 +61,15 @@ const InteractivePieChart: React.FC<{ data: ChartData[] }> = ({ data }) => {
 const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
   if (!slide) return null;
 
-  const { markSlideComplete, setNote, notes, currentSlideIndex, resetLesson } = useLessonStore();
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const { markSlideComplete, currentSlideIndex, resetLesson } = useLessonStore();
   const [expandedItem, setExpandedItem] = useState<RevealItem | null>(null);
   
   const [internalStep, setInternalStep] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const [activeHotspot, setActiveHotspot] = useState<RevealItem | null>(null);
-  const [activeMenuItem, setActiveMenuItem] = useState<number>(0);
-  const [activeSidePanel, setActiveSidePanel] = useState<number | null>(null);
-
-  const [dragAssignments, setDragAssignments] = useState<Record<string, string>>({}); 
-  const [draggedItemId, setDraggedItemId] = useState<string | null>(null);
-  const [rejectionId, setRejectionId] = useState<string | null>(null);
-  const [showCelebration, setShowCelebration] = useState(false);
   const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
   const [isAppClosing, setIsAppClosing] = useState(false);
-  
-  const [activeInterrogante, setActiveInterrogante] = useState<{title: string, content: string} | null>(null);
+  const [activeSidePanel, setActiveSidePanel] = useState<number | null>(null);
 
   const INSTITUTIONAL_LOGO = "https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/4145aa75-8804-4b69-be21-6b0d19b112fc_rw_1200.png?h=706056eb9bf36d26c5824fdad34f200c";
   const AUTHOR_PHOTO = "https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/e55dc68e-0118-4ad8-8a09-0fc429596fe9_rw_1200.png?h=83fc3bc4bda6b48dfd55e8691ac9811d";
@@ -87,16 +79,9 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
     setInternalStep(0);
     setActiveTab(0);
     setActiveHotspot(null);
-    setActiveMenuItem(0);
-    setDragAssignments({});
-    setDraggedItemId(null);
-    setRejectionId(null);
-    setShowCelebration(false);
-    setSelectedOption(null);
     setExpandedItem(null);
     setFlippedCards({});
     setIsAppClosing(false);
-    setActiveInterrogante(null);
     setActiveSidePanel(null);
   }, [currentSlideIndex, slide.id]);
 
@@ -136,16 +121,19 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
   }
 
   if (slide.id === 'slide-finish' || slide.id === 'slide-29' || slide.id === 'slide-30') {
+    const isSlide29 = slide.id === 'slide-29';
     return (
-      <div className="h-full w-full relative flex items-center justify-center overflow-hidden bg-[#111111] p-12 lg:p-24">
+      <div className={`h-full w-full relative flex items-center ${isSlide29 ? 'justify-start px-12 lg:px-32' : 'justify-center'} overflow-hidden bg-[#111111] p-12 lg:p-24`}>
          <div className="absolute inset-0 z-0">
            <img src={slide.visual.source} className="w-full h-full object-cover opacity-30" alt="" />
            <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-[#111111]" />
          </div>
-         <div className="relative z-10 text-center space-y-12 animate-in zoom-in-95 duration-1000 max-w-4xl">
-            <div className="inline-block p-6 bg-red-600 rounded-[2.5rem] shadow-[0_0_50px_rgba(239,68,68,0.5)] animate-bounce mb-8">
-               {renderIcon('Award', 64)}
-            </div>
+         <div className={`relative z-10 ${isSlide29 ? 'text-left' : 'text-center'} space-y-12 animate-in zoom-in-95 duration-1000 max-w-4xl`}>
+            {!isSlide29 && (
+              <div className="inline-block p-6 bg-red-600 rounded-[2.5rem] shadow-[0_0_50px_rgba(239,68,68,0.5)] animate-bounce mb-8">
+                 {renderIcon('Award', 64)}
+              </div>
+            )}
             <div className="space-y-4">
               <h2 className="text-6xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-none">{slide.title}</h2>
               <p className="text-xl lg:text-3xl font-bold text-red-500 uppercase tracking-[0.4em]">{slide.subtitle}</p>
@@ -153,14 +141,16 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
             <div className="space-y-4">
               <p className="text-xl lg:text-2xl font-light text-slate-300 leading-relaxed opacity-90">{slide.content}</p>
             </div>
-            <div className="flex flex-wrap justify-center gap-6 pt-10">
-               <button onClick={resetLesson} className="px-12 py-6 bg-white/5 border border-white/10 rounded-full font-black uppercase text-xs tracking-[0.4em] hover:bg-red-600 transition-all flex items-center gap-3">
-                 {renderIcon('RotateCcw', 18)} Reiniciar Curso
-               </button>
-               <button onClick={handleAbandon} className="px-12 py-6 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] shadow-xl hover:scale-105 transition-all">
-                 Finalizar Sesión
-               </button>
-            </div>
+            {!isSlide29 && (
+              <div className="flex flex-wrap justify-center gap-6 pt-10">
+                 <button onClick={resetLesson} className="px-12 py-6 bg-white/5 border border-white/10 rounded-full font-black uppercase text-xs tracking-[0.4em] hover:bg-red-600 transition-all flex items-center gap-3">
+                   {renderIcon('RotateCcw', 18)} Reiniciar Presentación
+                 </button>
+                 <button onClick={handleAbandon} className="px-12 py-6 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] shadow-xl hover:scale-105 transition-all">
+                   Salir
+                 </button>
+              </div>
+            )}
          </div>
       </div>
     );
@@ -238,7 +228,6 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
           </div>
         )}
 
-        {/* INTERACTIVE REVEAL - SLIDE 3 */}
         {slide.type === 'interactive-reveal' && slide.interaction?.type === 'grid-cards' && (
            <div className="w-full h-full flex flex-col p-8 lg:p-20 overflow-y-auto custom-scrollbar-dark animate-in fade-in duration-700">
              <div className="max-w-7xl mx-auto w-full mb-12 space-y-4">
@@ -265,34 +254,40 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
            </div>
         )}
 
-        {/* KEYNOTES GRID - SLIDE 28 */}
         {slide.type === 'keynotes-grid' && (
-          <div className="h-full w-full bg-[#f3f4f6] flex flex-col p-8 lg:p-20 overflow-y-auto custom-scrollbar-dark animate-in fade-in duration-700">
-            <div className="max-w-7xl mx-auto w-full mb-12 space-y-4">
-               <p className="text-red-500 font-bold uppercase tracking-widest text-sm">{slide.subtitle}</p>
-               <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter text-slate-900 leading-none">
+          <div className="h-full w-full bg-[#f8fafc] flex flex-col p-6 lg:p-14 overflow-y-auto custom-scrollbar-dark animate-in fade-in duration-700">
+            <div className="max-w-[1250px] mx-auto w-full mb-8 lg:mb-12 space-y-2">
+               <p className="text-red-500 font-bold uppercase tracking-[0.35em] text-[10px] lg:text-xs animate-in slide-in-from-left-5 duration-700">
+                  {slide.subtitle || 'PLAN DE ACCIÓN FORMAL'}
+               </p>
+               <h2 className="text-4xl lg:text-7xl font-black uppercase tracking-tighter text-[#0f172a] leading-[0.85] animate-in slide-in-from-left-8 duration-1000">
                  {slide.title}
                </h2>
             </div>
 
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="max-w-[1250px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
                {slide.interaction?.revealItems?.map((item, idx) => (
-                 <div key={idx} className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col transition-all hover:-translate-y-2 hover:shadow-2xl duration-300">
-                    <div className="p-10 flex flex-col items-center text-center gap-6 flex-1">
-                       <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center text-white shadow-md">
-                          {renderIcon(item.icon, 28)}
+                 <div key={idx} className="bg-white rounded-[1.8rem] shadow-[0_15px_45px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col transition-all hover:-translate-y-3 hover:shadow-[0_35px_70px_rgba(0,0,0,0.08)] duration-500 group border border-slate-50">
+                    <div className="p-8 lg:p-10 flex flex-col items-center text-center gap-6 flex-1">
+                       <div className="w-14 h-14 lg:w-18 lg:h-18 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg transform transition-transform duration-500 group-hover:scale-110">
+                          {renderIcon(item.icon, 30)}
                        </div>
-                       <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight leading-tight">{item.title}</h3>
-                       <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                       <div className="space-y-3">
+                          <h3 className="text-base lg:text-xl font-black text-slate-900 uppercase tracking-tighter leading-tight whitespace-pre-line">
+                            {item.title}
+                          </h3>
+                          <div className="w-8 h-0.5 bg-red-100 mx-auto rounded-full group-hover:w-16 transition-all duration-500" />
+                       </div>
+                       <p className="text-slate-500 text-[11px] lg:text-[14px] font-medium leading-relaxed opacity-80">
                           {item.text}
                        </p>
                     </div>
                     <button 
                       onClick={() => { setExpandedItem(item); markSlideComplete(currentSlideIndex); }}
-                      className="bg-[#0f172a] hover:bg-red-600 p-5 flex items-center justify-start gap-4 text-white transition-colors group"
+                      className="bg-[#0f172a] hover:bg-red-600 py-4 lg:py-5 flex items-center justify-center gap-3 text-white transition-all duration-300 transform active:scale-95"
                     >
-                       <LucideIcons.Search size={18} className="opacity-60 group-hover:opacity-100" />
-                       <span className="text-xs font-black uppercase tracking-[0.2em]">Ver detalles</span>
+                       <LucideIcons.Search size={16} className="opacity-70" />
+                       <span className="text-[10px] font-black uppercase tracking-[0.25em]">Ver detalles</span>
                     </button>
                  </div>
                ))}
@@ -384,7 +379,7 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
                 <div className="flex-1 relative overflow-hidden text-slate-900 flex flex-col bg-slate-50">
                    {isCriticalAnalysis ? (
                      <div className="h-full w-full flex flex-col lg:flex-row gap-8 lg:gap-12 p-8 lg:p-14 animate-in fade-in duration-700">
-                        {/* Left: Interactive Pie Chart (Summarizing all 4 points) */}
+                        {/* Left: Interactive Pie Chart */}
                         <div className="flex-1 flex flex-col items-center justify-center gap-10">
                            <div className="w-full">
                               <InteractivePieChart data={[
@@ -399,7 +394,7 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
                            </p>
                         </div>
 
-                        {/* Right: Numbered List following the reference image style */}
+                        {/* Right: Numbered List */}
                         <div className="flex-[1.2] flex flex-col justify-center gap-4 lg:gap-6 overflow-y-auto custom-scrollbar-dark pr-4">
                            {slide.interaction.revealItems.map((item, idx) => (
                               <button 
@@ -648,22 +643,22 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
         )}
 
         {slide.type === 'stepped-overlay' && slide.interaction?.revealItems && (
-           <div className="w-full h-full flex items-center justify-center p-4 lg:p-24 bg-[#111111]">
-             <div className="relative w-full max-w-6xl bg-[#1a1a1a] rounded-[2.5rem] lg:rounded-[3.5rem] border border-white/10 shadow-2xl overflow-hidden h-[90vh] lg:h-[750px] flex flex-col">
-                <div className="p-6 lg:p-10 border-b border-white/5 flex items-center justify-between shrink-0 bg-[#222222]/50">
-                   <h3 className="text-xl lg:text-4xl font-black uppercase text-white tracking-tighter">{slide.title}</h3>
-                   <div className="flex gap-2 lg:gap-4">
-                      <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-2.5 lg:p-4 bg-white/5 rounded-2xl text-white hover:bg-red-600 transition-all">{renderIcon('ChevronLeft', 20)}</button>
-                      <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-2.5 lg:p-4 bg-white/5 rounded-2xl text-white hover:bg-red-600 transition-all">{renderIcon('ChevronRight', 20)}</button>
+           <div className="w-full h-full flex items-center justify-center p-4 lg:p-12 bg-[#111111]">
+             <div className="relative w-full max-w-5xl bg-[#1a1a1a] rounded-[2.5rem] lg:rounded-[3rem] border border-white/10 shadow-2xl overflow-hidden h-[85vh] lg:h-[580px] flex flex-col">
+                <div className="p-4 lg:p-6 border-b border-white/5 flex items-center justify-between shrink-0 bg-[#222222]/50">
+                   <h3 className="text-lg lg:text-2xl font-black uppercase text-white tracking-tighter">{slide.title}</h3>
+                   <div className="flex gap-2 lg:gap-3">
+                      <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === 0}>{renderIcon('ChevronLeft', 16)}</button>
+                      <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-2 lg:p-3 bg-white/5 rounded-xl text-white hover:bg-red-600 hover:text-white transition-all disabled:opacity-10" disabled={internalStep === slide.interaction.revealItems.length - 1}>{renderIcon('ChevronRight', 16)}</button>
                    </div>
                 </div>
                 <div className="flex-1 relative overflow-hidden text-white flex flex-col bg-gradient-to-br from-[#1a1a1a] to-[#222222]">
                    {slide.interaction.revealItems.map((item, i) => (
-                      <div key={i} className={`absolute inset-0 p-8 lg:p-16 flex flex-col lg:flex-row gap-8 lg:gap-16 transition-all duration-700 overflow-y-auto custom-scrollbar ${i === internalStep ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-12 z-0 pointer-events-none'}`}>
-                          <img src={item.image} className="w-full lg:w-[45%] aspect-square object-cover rounded-[2rem] lg:rounded-[2.5rem] shadow-2xl border border-white/5 animate-in zoom-in-95 duration-1000" alt="" />
-                          <div className="flex-1 space-y-4 lg:space-y-10 flex flex-col justify-center text-left">
-                             <h4 className="text-3xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none">{item.title}</h4>
-                             <p className="text-base lg:text-xl opacity-80 text-slate-300 font-light leading-snug max-w-2xl whitespace-pre-wrap">{item.longContent}</p>
+                      <div key={i} className={`absolute inset-0 p-6 lg:p-10 flex flex-col lg:flex-row gap-6 lg:gap-10 transition-all duration-700 overflow-y-auto custom-scrollbar ${i === internalStep ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-12 z-0 pointer-events-none'}`}>
+                          <img src={item.image} className="w-full lg:w-[45%] aspect-video object-cover rounded-2xl lg:rounded-3xl shadow-2xl border border-white/5 animate-in zoom-in-95 duration-1000" alt="" />
+                          <div className="flex-1 space-y-3 lg:space-y-6 flex flex-col justify-center text-left">
+                             <h4 className="text-2xl lg:text-4xl font-black uppercase tracking-tighter text-white leading-none">{item.title}</h4>
+                             <p className="text-sm lg:text-lg opacity-80 text-slate-300 font-light leading-snug max-w-2xl whitespace-pre-wrap">{item.longContent}</p>
                           </div>
                       </div>
                    ))}
@@ -672,16 +667,12 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
            </div>
         )}
 
-        {/* SLIDE 15: SPLIT SLIDER - AJUSTADO CON TIRITA Y ALINEACIÓN */}
         {slide.type === 'split-slider' && slide.interaction?.revealItems && (
            <div className="w-full h-full flex flex-col bg-white overflow-hidden">
               <div className="relative h-[45vh] lg:h-[55vh] w-full overflow-hidden shrink-0">
                  <img key={internalStep} src={slide.interaction.revealItems[internalStep].image || slide.visual.source} className="w-full h-full object-cover animate-in fade-in duration-700" alt="" />
               </div>
-              
-              {/* Tirita decorativa roja debajo de la imagen */}
               <div className="h-1.5 w-full bg-red-600 shrink-0" />
-
               <div className="flex-1 relative flex flex-col items-center justify-center p-8 lg:p-12 overflow-hidden bg-white">
                  <div className="w-full max-w-5xl h-full flex flex-col items-center justify-center text-center gap-6 relative">
                     <div className="flex-1 flex flex-col items-center justify-center space-y-6 overflow-y-auto custom-scrollbar-dark px-12">
@@ -690,28 +681,16 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
                          {slide.interaction.revealItems[internalStep].longContent}
                        </p>
                     </div>
-
-                    {/* Indicadores de puntos (Dots) */}
                     <div className="flex gap-2 pb-4 shrink-0">
                       {slide.interaction.revealItems.map((_, i) => (
-                        <button 
-                          key={i} 
-                          onClick={() => setInternalStep(i)}
-                          className={`h-2 rounded-full transition-all duration-500 ${i === internalStep ? 'w-10 bg-red-600' : 'w-2 bg-slate-200 hover:bg-red-200'}`}
-                        />
+                        <button key={i} onClick={() => setInternalStep(i)} className={`h-2 rounded-full transition-all duration-500 ${i === internalStep ? 'w-10 bg-red-600' : 'w-2 bg-slate-200 hover:bg-red-200'}`} />
                       ))}
                     </div>
-
-                    {/* Flechas de navegación subidas y alineadas con el texto */}
                     <div className="absolute inset-y-0 -left-4 lg:left-0 flex items-start pt-12 lg:pt-20">
-                       <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-4 bg-white rounded-full border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-500 shadow-sm transition-all" disabled={internalStep === 0}>
-                         {renderIcon('ChevronLeft', 32)}
-                       </button>
+                       <button onClick={() => setInternalStep(Math.max(0, internalStep - 1))} className="p-4 bg-white rounded-full border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-500 shadow-sm transition-all" disabled={internalStep === 0}>{renderIcon('ChevronLeft', 32)}</button>
                     </div>
                     <div className="absolute inset-y-0 -right-4 lg:right-0 flex items-start pt-12 lg:pt-20">
-                       <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-4 bg-white rounded-full border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-500 shadow-sm transition-all" disabled={internalStep === slide.interaction.revealItems.length - 1}>
-                         {renderIcon('ChevronRight', 32)}
-                       </button>
+                       <button onClick={() => { const n = Math.min(slide.interaction!.revealItems!.length - 1, internalStep + 1); setInternalStep(n); if (n === slide.interaction!.revealItems!.length - 1) markSlideComplete(currentSlideIndex); }} className="p-4 bg-white rounded-full border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-500 shadow-sm transition-all" disabled={internalStep === slide.interaction.revealItems.length - 1}>{renderIcon('ChevronRight', 32)}</button>
                     </div>
                  </div>
               </div>
@@ -747,41 +726,74 @@ const SlideRenderer: React.FC<SlideRendererProps> = ({ slide }) => {
       </div>
 
       {expandedItem && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-8 lg:p-16">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 lg:p-12 animate-in fade-in duration-300">
           <div className="absolute inset-0 bg-black/98 backdrop-blur-3xl" onClick={() => setExpandedItem(null)} />
-          <div className="relative w-full max-w-7xl bg-white rounded-[5rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[90vh] border border-white/10 animate-in zoom-in-95">
-              <div className="flex-1 min-h-[400px] lg:min-h-full">
+          <div className={`relative w-full ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'max-w-6xl' : 'max-w-5xl'} bg-white rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row max-h-[85vh] border border-white/10 animate-in zoom-in-95 ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'items-stretch' : ''}`}>
+              <div className={`flex-1 min-h-[300px] lg:min-h-full ${slide.id === 'slide-28' ? 'hidden lg:block' : ''}`}>
                 <img src={expandedItem.image} className="w-full h-full object-cover" />
               </div>
-              <div className="flex-1 p-12 lg:p-24 overflow-y-auto space-y-10 text-slate-900 custom-scrollbar bg-white">
-                <button onClick={() => setExpandedItem(null)} className="absolute top-10 right-10 p-4 bg-slate-100 rounded-full hover:bg-red-600 hover:text-white transition-all">{renderIcon('X', 28)}</button>
-                <h3 className="text-5xl lg:text-6xl font-black uppercase tracking-tighter text-slate-900">{expandedItem.title}</h3>
-                <p className="text-2xl font-bold text-red-600 leading-tight italic border-l-8 border-red-600 pl-8 bg-red-50 p-6 rounded-2xl">"{expandedItem.text}"</p>
-                <p className="text-xl font-medium opacity-90 leading-relaxed text-slate-600">{expandedItem.longContent}</p>
-                <button onClick={() => { setExpandedItem(null); markSlideComplete(currentSlideIndex); }} className="px-12 py-5 bg-red-600 rounded-full font-black uppercase text-xs tracking-[0.4em] text-white">Regresar</button>
+              
+              <div className={`flex-1 p-10 lg:p-16 overflow-y-auto text-slate-900 custom-scrollbar bg-white relative ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'flex flex-col' : ''}`}>
+                <button onClick={() => setExpandedItem(null)} className="absolute top-6 right-6 p-4 bg-slate-100 rounded-full hover:bg-red-600 hover:text-white transition-all z-20 shadow-md">
+                   {renderIcon('X', 24)}
+                </button>
+                
+                <div className={`w-full ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'flex-1 flex flex-col items-center justify-center py-10' : 'space-y-10'}`}>
+                  <div className={`w-full ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'max-w-4xl mx-auto flex flex-col items-center gap-10' : 'space-y-8'}`}>
+                     <h3 className={`font-black uppercase tracking-tighter text-slate-900 leading-tight whitespace-pre-line break-words ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-4xl lg:text-6xl text-center' : 'text-4xl lg:text-5xl'}`}>
+                        {expandedItem.title}
+                     </h3>
+                     
+                     {expandedItem.text && (
+                       <p className={`font-bold text-red-600 leading-tight italic border-l-4 lg:border-l-8 border-red-600 pl-6 lg:pl-8 bg-red-50 p-6 rounded-2xl ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-2xl lg:text-3xl text-center lg:border-l-0 lg:border-t-4' : 'text-xl'}`}>
+                         "{expandedItem.text}"
+                       </p>
+                     )}
+
+                     <div className={`space-y-8 w-full ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-center' : ''}`}>
+                        {expandedItem.longContent?.split('\n').map((line, lIdx) => {
+                           const trimmedLine = line.trim();
+                           if (!trimmedLine) return <div key={lIdx} className="h-4" />;
+
+                           const headers = ['OBJETIVO:', 'ESTRATEGIAS:', 'CRONOGRAMA', 'RECURSOS:'];
+                           const isHeader = headers.some(h => trimmedLine.startsWith(h));
+
+                           if (isHeader) {
+                              return (
+                                 <h4 key={lIdx} className={`font-black uppercase tracking-[0.2em] text-red-600 mt-12 mb-6 border-b-2 border-red-100 pb-4 ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-2xl lg:text-3xl text-center' : 'text-sm lg:text-base'}`}>
+                                    {trimmedLine}
+                                 </h4>
+                              );
+                           }
+
+                           if (trimmedLine.startsWith('•')) {
+                              return (
+                                 <div key={lIdx} className={`flex items-start gap-6 group ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'justify-center py-3' : 'pl-4'}`}>
+                                    <div className={`mt-2.5 shrink-0 bg-red-600 rounded-full group-hover:scale-125 transition-transform ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'w-5 h-5' : 'w-3 h-3'}`} />
+                                    <span className={`font-medium leading-relaxed text-slate-700 ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-xl lg:text-3xl text-center' : 'text-base lg:text-lg'}`}>
+                                       {trimmedLine.replace('•', '').trim()}
+                                    </span>
+                                 </div>
+                              );
+                           }
+
+                           return (
+                              <p key={lIdx} className={`font-medium opacity-90 leading-relaxed text-slate-600 ${slide.id === 'slide-28' || slide.id === 'slide-23' ? 'text-xl lg:text-3xl text-center py-3' : 'text-base lg:text-lg'}`}>
+                                 {trimmedLine}
+                              </p>
+                           );
+                        })}
+                     </div>
+                     
+                     <div className="pt-16">
+                        <button onClick={() => { setExpandedItem(null); markSlideComplete(currentSlideIndex); }} className="px-16 py-6 bg-red-600 rounded-full font-black uppercase text-sm tracking-[0.4em] text-white hover:scale-110 transition-transform shadow-2xl">Regresar</button>
+                     </div>
+                  </div>
+                </div>
               </div>
           </div>
         </div>
       )}
-
-      <style>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(239,68,68,0.25); border-radius: 12px; }
-        .custom-scrollbar-dark::-webkit-scrollbar { width: 5px; }
-        .custom-scrollbar-dark::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar-dark::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 12px; }
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          25% { transform: translateX(-5px); }
-          75% { transform: translateX(5px); }
-        }
-        .animate-shake { animation: shake 0.2s ease-in-out 0s 2; }
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
-      `}</style>
     </div>
   );
 };

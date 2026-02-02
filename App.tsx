@@ -207,7 +207,7 @@ const App: React.FC = () => {
            </div>
 
            <div className="flex items-center gap-2 lg:gap-4 text-white/60">
-              {/* Navigation Tools con Home */}
+              {/* Navigation Tools */}
               <div className="hidden sm:flex items-center gap-1 lg:gap-2">
                 <button onClick={() => goToSlide(0)} title="Inicio" className="p-2 hover:text-red-500 transition-colors">
                   <Home size={18} />
@@ -235,7 +235,7 @@ const App: React.FC = () => {
            </div>
         </div>
 
-        {/* Botón de expansión flotante minimalista - SIN MARCO REDONDO NI FONDO */}
+        {/* Floating Expansion Button */}
         <button 
           onClick={handleFullscreen}
           title="Pantalla Completa"
@@ -244,16 +244,11 @@ const App: React.FC = () => {
           <Maximize size={24} className="group-hover:scale-125 transition-transform" />
         </button>
 
-        {/* Progress bar subtle bottom */}
+        {/* Progress bar */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5 z-40">
            <div className="h-full bg-red-600 transition-all duration-1000 ease-in-out shadow-[0_0_10px_rgba(239,68,68,0.5)]" style={{ width: `${((currentSlideIndex + 1) / total) * 100}%` }} />
         </div>
       </main>
-      <style>{`
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(239,68,68,0.25); border-radius: 12px; }
-      `}</style>
     </div>
   );
 };
