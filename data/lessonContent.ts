@@ -5,7 +5,7 @@ export const COUNSELING_LESSON: Lesson = {
   id: 'leadership-lesson-v3',
   title: 'El impacto del liderazgo de los directivos',
   subtitle: 'Maestría en Educación - Eliseo Ortega',
-  totalSlides: 27,
+  totalSlides: 30,
   slides: [
     {
       id: 'slide-1',
@@ -78,8 +78,16 @@ export const COUNSELING_LESSON: Lesson = {
     },
     {
       id: 'slide-7',
-      type: 'stepped-overlay',
+      type: 'visual-info',
       title: 'Capítulo I: El Problema',
+      subtitle: 'Planteamiento de la Investigación',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/9f0e9592-777b-4b1b-a365-b573df645b9e_rw_1920.jpg?h=d0b31c599ddade66a9bcd1562d38b570', position: 'background' },
+      content: 'Análisis detallado de la problemática, interrogantes y objetivos de estudio en la U.E. Andrés Bello.'
+    },
+    {
+      id: 'slide-8',
+      type: 'stepped-overlay',
+      title: 'Desarrollo del Problema',
       subtitle: 'Planteamiento y Objetivos',
       visual: { type: 'image', source: 'https://picsum.photos/seed/prob/1200/800', position: 'background' },
       interaction: {
@@ -97,21 +105,21 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Preguntas Clave', 
             longContent: '• ¿Cómo se describiría la situación actual del liderazgo de los directivos en torno al aprendizaje de los estudiantes en la U.E. Andrés Bello?\n\n• ¿Cuál sería el impacto de un liderazgo efectivo por parte de los directivos en el aprendizaje sostenido?\n\n• ¿Cuáles serían los mecanismos a desarrollar para promover el ejercicio constante de un liderazgo directivo efectivo?', 
             icon: 'HelpCircle', 
-            image: 'https://picsum.photos/seed/questions/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/fb60803d-b181-484a-a512-202c9150f722_rw_1920.jpg?h=127f743384eaa205f8b2b7f0cd3c8e58' 
           },
           { 
             title: 'Objetivo General', 
             text: 'Analizar el impacto', 
             longContent: 'Analizar el impacto del liderazgo de los directivos en el aprendizaje de los estudiantes en la Unidad Educativa Andrés Bello, estado Aragua.', 
             icon: 'Activity', 
-            image: 'https://picsum.photos/seed/target/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/2aa2a015-30b1-46b5-a798-d285e82acad1_rw_1920.jpg?h=ae88913123e1a735254d601538678f5a' 
           },
           { 
             title: 'Objetivos Específicos', 
             text: 'Metas de la Investigación', 
             longContent: '1. DESCRIBIR el liderazgo directivo actual en la U.E. Andrés Bello.\n2. EXPLICAR el impacto de un liderazgo efectivo en el aprendizaje sostenido.\n3. ESPECIFICAR la incidencia del liderazgo en el rendimiento académico.', 
             icon: 'ListChecks', 
-            image: 'https://picsum.photos/seed/steps/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/a4c9f397-bf9d-435b-bba0-8769e5a8c54e_rw_1920.jpg?h=cc6af2cc86dfd490cef779b28415f72d' 
           },
           { 
             title: 'Justificación', 
@@ -124,7 +132,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-8',
+      id: 'slide-9',
       type: 'hotspot-reveal',
       title: 'Delimitación de la Investigación',
       subtitle: 'Unidad Educativa Andrés Bello',
@@ -160,52 +168,52 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-alcances',
+      id: 'slide-10',
       type: 'split-reveal-cards',
       title: 'Alcances de la Investigación',
       subtitle: 'Delimitación y Enfoque',
       visual: { type: 'image', source: 'https://picsum.photos/seed/alcances/1200/800', position: 'right' },
-      content: 'El alcance de esta investigación se delimita a la Unidad Educativa Nacional "Andrés Bello" del Estado Aragua en Venezuela. Se enfoca exclusivamente en analizar el impacto del liderazgo directivo sobre el aprendizaje de los estudiantes, excluyendo otras variables no relacionadas directamente con el liderazgo organizacional.',
+      content: 'El alcance de esta investigación se delimita a la Unidad Educativa Nacional "Andrés Bello" del Estado Aragua en Venezuela. Se enfoca exclusivamente en analizar el impacto del liderazgo directivo sobre el aprendizaje de los estudiantes.',
       interaction: {
         type: 'grid-cards',
         revealItems: [
           { 
             title: 'Metodología y Tipo', 
             text: 'Enfoque Cuantitativo Descriptivo', 
-            longContent: 'Se utilizará una metodología cuantitativa para comprender en profundidad las percepciones del personal. El estudio es descriptivo, detallando cómo el liderazgo impacta en el aprendizaje.', 
+            longContent: 'Se utilizará una metodología cuantitativa para comprender en profundidad las percepciones del personal.', 
             icon: 'BarChart3', 
             image: 'https://picsum.photos/seed/methods/800/600' 
           },
           { 
             title: 'Población y Tiempo', 
             text: 'Muestra Censal 2023-2024', 
-            longContent: 'Muestra de 2-3 personas por área (docentes, directivos, administrativos). La investigación se desarrolla durante el periodo escolar 2023-2024 (aproximadamente un año).', 
+            longContent: 'Muestra de 2-3 personas por área (docentes, directivos, administrativos).', 
             icon: 'Clock', 
-            image: 'https://picsum.photos/seed/time/800/600' 
+            image: 'https://radiomundial.com.ve/wp-content/uploads/2017/10/63845_700x538_scaled_0197763001380679751.jpg' 
           }
         ]
       }
     },
     {
-      id: 'slide-9',
+      id: 'slide-11',
       type: 'visual-info',
       title: 'Limitaciones',
       subtitle: 'Desafíos del Proceso',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/limits/800/600', position: 'right' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/dc3cf9bf-3bce-49f7-a4c3-ce9389b2edbf_rw_1920.jpg?h=477029a419d8c6129c68f88fd55fa194', position: 'right' },
       content: 'Durante la investigación se enfrentaron diversos obstáculos que definieron el alcance del estudio.',
       bullets: ['Falta de recursos tecnológicos', 'Resistencia al cambio en algunos participantes', 'Contexto económico volátil']
     },
     {
-      id: 'slide-11',
+      id: 'slide-12',
       type: 'visual-info',
       title: 'Capítulo II: Marco Teórico',
       subtitle: 'Fundamentación de la Investigación',
       visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/b1a6143a-7316-4d39-bd6b-61a6242d5748_rw_1920.jpg?h=b1e347dd27c67cb8d3ea5b7547128eb1', position: 'background' },
-      content: 'Un marco teórico es quien encuadra, contiene y ubica el problema de investigación, dándole sentido y significado. Al igual que una teoría proporciona descripciones, comprensión y explicaciones, también otorga un marco sólido y coherente según Daros (2002).',
+      content: 'Un marco teórico es quien encuadra, contiene y ubica el problema de investigación, dándole sentido y significado.',
       bullets: ['Comprensión del liderazgo educativo', 'Base para el análisis del aprendizaje', 'Influencia de líderes escolares']
     },
     {
-      id: 'slide-12',
+      id: 'slide-13',
       type: 'stepped-overlay',
       title: 'Antecedentes de la Investigación',
       subtitle: 'Referentes Internacionales y Nacionales',
@@ -218,54 +226,84 @@ export const COUNSELING_LESSON: Lesson = {
             text: 'Liderazgo Pedagógico y Crisis', 
             longContent: 'U. Nacional Mayor de San Marcos (Perú). El liderazgo pedagógico es fundamental en la gestión de cambios y transformaciones. En situaciones de crisis, el líder orienta a la institución hacia soluciones viables y adaptables a su contexto.', 
             icon: 'Globe', 
-            image: 'https://picsum.photos/seed/peru/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/98e14b57-4849-43c9-8279-0eefb275ec33_rw_1920.jpg?h=b64e3954cda5550bab2b09c57f25490c' 
           },
           { 
             title: 'Internacional Vidal (2023)  ', 
             text: 'Liderazgo Directivo Transformacional', 
             longContent: 'U. Nacional Mayor de San Marcos (Perú). Percibe que algunos directores no están plenamente comprometidos, careciendo de liderazgo. Es fundamental contar con un líder y una gestión adecuada para el éxito de la comunidad.', 
             icon: 'Users', 
-            image: 'https://picsum.photos/seed/vid/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/5719a341-9e72-47c7-b31c-77d3d067f382_rw_1920.jpg?h=d9b3613f58b9b8e199cdbb8fbbd7108f' 
           },
           { 
             title: 'Nacional Dorado(2022) ', 
             text: 'Gestión en la Nueva Ruralidad', 
             longContent: 'Rubio, Táchira. Considera que ante los cambios políticos y sociales rurales, los directivos deben reflexionar sobre su gestión y armonizar acciones en un modelo explicativo de su actuar.', 
             icon: 'MapPin', 
-            image: 'https://picsum.photos/seed/ven/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/1374931c-08d1-4e24-8c1d-df4e7124b528_rw_1920.jpg?h=155114c0e000ad516e6fccac8c5293f2' 
           },
           { 
             title: 'Nacional - Cañas (2022) ', 
             text: 'El Gerente Educativo como Líder', 
             longContent: 'Rubio, Táchira. El educador necesita adecuar su modelo de enseñanza a un mundo dominado por la tecnología. Propone que con un modelo de liderazgo transformacional se lograrán grandes resultados.', 
             icon: 'GraduationCap', 
-            image: 'https://picsum.photos/seed/can/800/600' 
+            image: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/159ab95b-2ba9-4d46-9a6c-c4ae9fcec2ad_rw_1920.jpg?h=17a3831a1180cbee985fa99a604aeca5' 
           }
         ]
       }
     },
     {
-      id: 'slide-13',
+      id: 'slide-14',
       type: 'tabs-reveal',
       title: 'Bases Teóricas: El Liderazgo',
       subtitle: 'Definiciones y Conceptos',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/lead-theory/1200/800', position: 'background' },
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/a3c694f5-162e-4141-8f1c-8f6b04bc8867_rw_1920.jpg?h=14403f106c229bb34c220495e06d7861', position: 'background' },
       interaction: {
         type: 'side-reveal',
         revealItems: [
-          { title: 'Concepto General', text: 'Proceso y Habilidad', longContent: 'El liderazgo es el proceso y habilidad para guiar e influir en un grupo para lograr resultados, mejorando el potencial de los empleados y el ambiente de desempeño.', icon: 'Zap' },
-          { title: 'Terry (2007)', text: 'Práctica Ética y Social', longContent: 'Surge cuando individuos impulsados por la esperanza enfrentan situaciones no auténticas y, con valentía, actúan en conjunto con sus seguidores para darles verdadera dimensión.', icon: 'Shield' },
-          { title: 'Hurtado (2019)', text: 'Autoridad Voluntaria', longContent: 'Capacidad de ejercer influencia mediante habilidades. El líder gana autoridad voluntaria de la comunidad para guiar, inspirar y comprometer a sus miembros.', icon: 'Target' },
-          { title: 'Koontz & Weihrich', text: 'Esfuerzo Voluntario', longContent: 'Forma en que cada gerente emprende sus funciones para influir sobre las personas bajo su cargo, logrando que su esfuerzo contribuya a las metas organizacionales.', icon: 'Briefcase' },
-          { title: 'Chiavenato (1993)', text: 'Influencia Interpersonal', longContent: 'Influencia ejercida en una situación, dirigida a través del proceso de comunicación humana a la consecución de uno o diversos objetivos específicos.', icon: 'MessageCircle' }
+          { 
+            title: 'Concepto General', 
+            text: 'Proceso y Habilidad', 
+            longContent: 'El liderazgo es el proceso y habilidad para guiar e influir en un grupo para lograr resultados, mejorando el potencial de los empleados y el ambiente de desempeño.', 
+            icon: 'Zap',
+            image: 'URL_DE_LA_IMAGEN_AQUI' 
+          },
+          { 
+            title: 'Terry (2007)', 
+            text: 'Práctica Ética y Social', 
+            longContent: 'Surge cuando individuos impulsados por la esperanza enfrentan situaciones no auténticas y, con valentía, actúan en conjunto con sus seguidores para darles verdadera dimensión.', 
+            icon: 'Shield',
+            image: 'URL_DE_LA_IMAGEN_AQUI'
+          },
+          { 
+            title: 'Hurtado (2019)', 
+            text: 'Autoridad Voluntaria', 
+            longContent: 'Capacidad de ejercer influencia mediante habilidades. El líder gana autoridad voluntaria de la comunidad para guiar, inspirar y comprometer a sus miembros.', 
+            icon: 'Target',
+            image: 'URL_DE_LA_IMAGEN_AQUI'
+          },
+          { 
+            title: 'Koontz & Weihrich', 
+            text: 'Esfuerzo Voluntario', 
+            longContent: 'Forma en que cada gerente emprende sus funciones para influir sobre las personas bajo su cargo, logrando que su esfuerzo contribuya a las metas organizacionales.', 
+            icon: 'Briefcase',
+            image: 'URL_DE_LA_IMAGEN_AQUI'
+          },
+          { 
+            title: 'Chiavenato (1993)', 
+            text: 'Influencia Interpersonal', 
+            longContent: 'Influencia ejercida en una situación, dirigida a través del proceso de comunicación humana a la consecución de uno o diversos objetivos específicos.', 
+            icon: 'MessageCircle',
+            image: 'URL_DE_LA_IMAGEN_AQUI'
+          }
         ]
       }
     },
     {
-      id: 'slide-14',
+      id: 'slide-15',
       type: 'split-slider',
       title: 'Estilos de Liderazgo',
-      subtitle: 'Enfoques Clásicos y Autores',
+      subtitle: 'Enfoques Clásicos',
       visual: { type: 'image', source: 'https://picsum.photos/seed/lead-styles/1200/800', position: 'top' },
       interaction: {
         type: 'internal-slider',
@@ -279,10 +317,10 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-15',
+      id: 'slide-16',
       type: 'stepped-overlay',
       title: 'Bases Legales',
-      subtitle: 'Marco Normativo Educativo',
+      subtitle: 'Marco Normativo',
       visual: { type: 'image', source: 'https://picsum.photos/seed/law-ven/1200/800', position: 'background' },
       interaction: {
         type: 'stepped-reveal',
@@ -312,19 +350,19 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-16',
+      id: 'slide-17',
       type: 'visual-info',
       title: 'Capítulo III: Marco Metodológico',
-      subtitle: 'Enfoque, Diseño y Procedimientos',
+      subtitle: 'Enfoque y Diseño',
       visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
-      content: '“El marco metodológico, es la instancia referida a los métodos, a diversas reglas, registros, técnicas y protocolos con los cuales una Teoría y su Método calculan las magnitudes de lo real” (Balestrini, 2006, p 126).',
-      bullets: ['Recopilación objetiva de datos', 'Análisis estadístico riguroso', 'Diseño de proyecto factible']
+      content: 'Metodología, técnicas y protocolos utilizados para recolectar y analizar los datos de la investigación.',
+      bullets: ['Recopilación objetiva', 'Análisis riguroso', 'Proyecto factible']
     },
     {
-      id: 'slide-17',
+      id: 'slide-18',
       type: 'stepped-overlay',
       title: 'Desarrollo Metodológico',
-      subtitle: 'Fases, Población y Rigor Científico',
+      subtitle: 'Fases y Rigor',
       visual: { type: 'image', source: 'https://picsum.photos/seed/method-details/1200/800', position: 'background' },
       interaction: {
         type: 'stepped-reveal',
@@ -372,16 +410,30 @@ export const COUNSELING_LESSON: Lesson = {
             image: 'https://picsum.photos/seed/likert/800/600' 
           },
           { 
+            title: 'Dimensión', 
+            text: 'Aspecto fundamental extraído del análisis', 
+            longContent: 'Arias expresa que una dimensión es una característica o aspecto fundamental que se extrae o se identifica a partir del análisis o segmentación de una variable más amplia y compleja.', 
+            icon: 'FileText', 
+            image: 'https://picsum.photos/seed/likert/800/600' 
+          },
+          { 
+            title: 'Indicador', 
+            text: 'Método de medición para examinar variables', 
+            longContent: 'Un indicador es un síntoma, una señal o un método de medición que se utiliza para examinar y cuantificar una variable o sus dimensiones.', 
+            icon: 'FileText', 
+            image: 'https://picsum.photos/seed/likert/800/600' 
+          },
+          { 
             title: 'Validación de Expertos', 
             text: 'Juicio de Contenido', 
-            longContent: 'Uso de validez de criterio (Palella y Martins, 2012). Se considera la opinión de tres expertos en metodología para evaluar si el instrumento refleja correctamente la realidad que se intenta medir y pronosticar.', 
+            longContent: 'Uso de validez de criterio. Se considera la opinión de tres expertos en metodología para evaluar si el instrumento refleja correctamente la realidad.', 
             icon: 'CheckCircle', 
             image: 'https://picsum.photos/seed/validation/800/600' 
           },
           { 
             title: 'Cálculo de Confiabilidad', 
             text: 'Alfa de Cronbach', 
-            longContent: 'Grado en que la aplicación produce resultados iguales (Hernández et al, 2010). Fórmula: α = [K/(K-1)] * [1 - (ΣSi²/St²)]. Rangos: 0.81-1.00 (Muy alta), 0.61-0.80 (Alta), 0.41-0.60 (Moderada).', 
+            longContent: 'Grado en que la aplicación produce resultados iguales. Fórmula: α = [K/(K-1)] * [1 - (ΣSi²/St²)].', 
             icon: 'ShieldCheck', 
             image: 'https://picsum.photos/seed/reliability/800/600' 
           }
@@ -389,16 +441,16 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-18',
+      id: 'slide-19',
       type: 'visual-info',
       title: 'Capítulo IV: Análisis y Resultados',
-      subtitle: 'Resultados del Trabajo de Campo',
+      subtitle: 'Trabajo de Campo',
       visual: { type: 'image', source: 'https://picsum.photos/seed/results-cover/1920/1080', position: 'background' },
-      content: 'Presentación detallada de los datos obtenidos a través del instrumento de 15 ítems aplicado a la muestra de 11 sujetos. El análisis se divide en tres dimensiones clave del liderazgo educativo según Bass, Avolio y Goleman.',
-      bullets: ['Dimensión 1: Liderazgo de los Directivos', 'Dimensión 2: Impacto en el Aprendizaje', 'Dimensión 3: Impulso mediante el Liderazgo']
+      content: 'Presentación detallada de los datos obtenidos a través del instrumento aplicado a la muestra.',
+      bullets: ['Liderazgo Directivo', 'Impacto Aprendizaje', 'Impulso mediante Liderazgo']
     },
     {
-      id: 'slide-19',
+      id: 'slide-20',
       type: 'chart-results',
       title: 'Dimensión 1: Liderazgo de los Directivos',
       subtitle: 'Ítems 1 al 5',
@@ -465,7 +517,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-20',
+      id: 'slide-21',
       type: 'chart-results',
       title: 'Dimensión 2: Impacto en el Aprendizaje',
       subtitle: 'Ítems 6 al 10',
@@ -532,7 +584,7 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-21',
+      id: 'slide-22',
       type: 'chart-results',
       title: 'Dimensión 3: Impulso mediante Liderazgo',
       subtitle: 'Ítems 11 al 15',
@@ -564,7 +616,7 @@ export const COUNSELING_LESSON: Lesson = {
           },
           { 
             title: '13. Motivación al Logro', 
-            text: '¿Se percibió motivación común en directivos?', 
+            text: '¿Se percibe motivación común en directivos?', 
             longContent: '55% Nunca. Pink (2009) resalta motivación intrínseca como motor del propósito laboral y cultura organizacional.',
             icon: 'Award',
             chartData: [
@@ -600,27 +652,14 @@ export const COUNSELING_LESSON: Lesson = {
     },
     {
       id: 'slide-23',
-      type: 'visual-info',
-      title: 'Capítulo V: Conclusiones',
-      subtitle: 'Síntesis Final',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/conc/800/600', position: 'left' },
-      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica de la institución. Sin un líder formativo, las innovaciones se ven truncadas.',
-      bullets: [
-        'El liderazgo efectivo mejora el aprendizaje.',
-        'La formación directiva es una necesidad urgente.',
-        'La comunicación es el eje de la mejora escolar.'
-      ]
-    },
-    {
-      id: 'slide-22',
       type: 'chart-results',
       title: 'Análisis Crítico de Resultados',
-      subtitle: 'Dimensiones del Liderazgo Educativo',
+      subtitle: 'Hallazgos Clave',
       visual: { type: 'image', source: 'https://picsum.photos/seed/analyze-crit/1200/800', position: 'background' },
       interaction: {
         type: 'charts',
         revealItems: [
-          { 
+           { 
             title: '1. Déficit de Liderazgo Directivo (55%)', 
             text: 'Hallazgo Crítico', 
             longContent: 'Existe un déficit estructural significativo. La falta de acciones de desarrollo para directivos dificulta la toma de decisiones informadas y la gestión eficiente de equipos docentes.',
@@ -665,10 +704,19 @@ export const COUNSELING_LESSON: Lesson = {
     },
     {
       id: 'slide-24',
+      type: 'visual-info',
+      title: 'Capítulo V: Conclusiones',
+      subtitle: 'Síntesis Final',
+      visual: { type: 'image', source: 'https://picsum.photos/seed/conc/800/600', position: 'left' },
+      content: 'El liderazgo es el factor invisible que sostiene la estructura pedagógica.',
+      bullets: ['Liderazgo efectivo', 'Formación urgente', 'Comunicación asertiva']
+    },
+    {
+      id: 'slide-25',
       type: 'hotspot-reveal',
       title: 'Recomendaciones',
-      subtitle: 'Plan de Mejora Institucional',
-      content: 'La situación de liderazgo en la institución educativa presenta desafíos significativos que requieren una serie de recomendaciones prácticas y factibles para lograr mejoras sustanciales.',
+      subtitle: 'Plan de Mejora',
+      content: 'Estrategias sugeridas para mejorar el liderazgo directivo y docente.',
       visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'right' },
       interaction: {
         type: 'hotspots',
@@ -719,34 +767,134 @@ export const COUNSELING_LESSON: Lesson = {
       }
     },
     {
-      id: 'slide-25',
-      type: 'stepped-overlay',
-      title: 'Capítulo VI: La Propuesta',
-      subtitle: 'Programa de Formación',
-      visual: { type: 'image', source: 'https://picsum.photos/seed/prop/1200/800', position: 'background' },
+      id: 'slide-26',
+      type: 'visual-info',
+      title: 'Capítulo VI: PROPUESTA DE INVESTIGACIÓN',
+      subtitle: 'Gerencia y Liderazgo',
+      visual: { type: 'image', source: 'https://cdn.myportfolio.com/d435fa58-d32c-4141-8a15-0f2bfccdea41/cd5d7357-f3ef-4d86-b555-b7c9b402e7a5_rw_1920.jpg?h=89bd3bf4cdfa88de4e36fcc1fb471cf4', position: 'background' },
+      content: 'Reimaginando el futuro educativo a través de la formación.'
+    },
+    {
+      id: 'slide-27',
+      type: 'split-interactive-cards',
+      title: 'Desarrollo de la Propuesta',
+      subtitle: 'Detalles del Capítulo VI',
+      visual: { type: 'image', source: '', position: 'background' },
       interaction: {
-        type: 'stepped-reveal',
+        type: 'split-interactive',
         revealItems: [
-          { title: 'Fase 1', text: 'Capacitación Directiva', longContent: 'Talleres en inteligencia emocional y resolución de conflictos.', icon: 'Users', image: 'https://picsum.photos/seed/workshop/800/600' },
-          { title: 'Fase 2', text: 'Estrategias Pedagógicas', longContent: 'Acompañamiento y seguimiento constante del aprendizaje.', icon: 'Target', image: 'https://picsum.photos/seed/aim/800/600' }
+          { title: 'Exposición de Motivos', text: 'Calidad de la enseñanza...', longContent: 'La preocupación por la calidad de la enseñanza...', icon: 'FileText' },
+          { title: 'Justificación', text: 'Fundamentos de la propuesta...', longContent: 'Los alarmantes hallazgos surgidos de la evaluación...', icon: 'Lightbulb' }
         ]
       }
     },
     {
-      id: 'slide-26',
+      id: 'slide-28',
+      type: 'keynotes-grid',
+      title: 'Talleres de Capacitación Propuestos',
+      subtitle: 'PLAN DE ACCIÓN FORMAL',
+      visual: { type: 'image', source: '', position: 'background' },
+      interaction: {
+        type: 'grid-cards',
+        revealItems: [
+          { 
+            title: 'TALLER 1: Liderazgo Transformacional', 
+            text: 'Eleva las necesidades y motivaciones de los seguidores mediante inspiración.', 
+            longContent: `OBJETIVO: Capacitar a los docentes en conceptos y prácticas de liderazgo transformacional.
+
+ESTRATEGIAS:
+• Presentación teórica sobre fundamentos.
+• Trabajo en grupo para analizar casos prácticos.
+• Dinámicas de rol para experimentar el liderazgo.
+
+CRONOGRAMA (2 HORAS):
+• Introducción: 30 minutos.
+• Estudio de caso: 30 minutos.
+• Dinámica de rol: 40 minutos.
+• Reflexión y cierre: 20 minutos.
+
+RECURSOS: Proyector, PC, material impreso de casos.`, 
+            icon: 'Zap',
+            image: 'https://picsum.photos/seed/trans-lead/1200/800'
+          },
+          { 
+            title: 'TALLER 2: Liderazgo Situacional', 
+            text: 'Ajuste del estilo de liderazgo según el nivel de madurez de los seguidores.', 
+            longContent: `OBJETIVO: Capacitar a los docentes en el uso del liderazgo situacional según las necesidades de sus estudiantes.
+
+ESTRATEGIAS:
+• Presentación interactiva sobre estilos (dirección, asistencia, participación, delegación).
+• Ejercicio de autoevaluación de estilos.
+• Análisis de situaciones reales en grupos.
+
+CRONOGRAMA (2 HORAS):
+• Introducción: 30 minutos.
+• Autoevaluación: 20 minutos.
+• Análisis de situaciones: 40 minutos.
+• Plan de acción personal: 30 minutos.
+
+RECURSOS: Proyector, PC, cuestionarios de autoevaluación.`, 
+            icon: 'RefreshCw',
+            image: 'https://picsum.photos/seed/sit-lead/1200/800'
+          },
+          { 
+            title: 'TALLER 3: Liderazgo Emocional', 
+            text: 'Reconocimiento, regulación y gestión de emociones para un aprendizaje efectivo.', 
+            longContent: `OBJETIVO: Capacitar a los docentes en la importancia de reconocer y gestionar emociones propias y ajenas.
+
+ESTRATEGIAS:
+• Presentación teórica sobre IE y Goleman.
+• Actividad de reconocimiento de emociones básicas.
+• Simulación de gestión de emociones en el aula.
+
+CRONOGRAMA (2 HORAS):
+• Introducción: 25 minutos.
+• Reconocimiento de emociones: 20 minutos.
+• Simulación en el aula: 45 minutos.
+• Reflexión y plan de acción: 30 minutos.
+
+RECURSOS: PC, proyector, tarjetas de emociones.`, 
+            icon: 'Heart',
+            image: 'https://picsum.photos/seed/emot-lead/1200/800'
+          },
+          { 
+            title: 'TALLER 4: Liderazgo Colaborativo', 
+            text: 'Maximización de recursos mediante la cooperación activa y la participación.', 
+            longContent: `OBJETIVO: Promover la cooperación y la participación activa en el aula y comunidad educativa.
+
+ESTRATEGIAS:
+• Exposición teórica sobre enfoques colaborativos.
+• Actividades de trabajo en equipo (Rompecabezas).
+• Proyectos grupales interdisciplinarios.
+
+CRONOGRAMA (2 HORAS):
+• Introducción: 30 minutos.
+• Dinámica de equipo: 30 minutos.
+• Proyecto grupal: 45 minutos.
+• Reflexión y plan de acción: 30 minutos.
+
+RECURSOS: Proyector, PC, materiales para dinámicas (rompecabezas).`, 
+            icon: 'Users',
+            image: 'https://picsum.photos/seed/colab-lead/1200/800'
+          }
+        ]
+      }
+    },
+    {
+      id: 'slide-29',
       type: 'visual-info',
       title: 'Pensamiento Final',
-      subtitle: 'Cierre de la Defensa',
+      subtitle: 'Cierre',
       visual: { type: 'image', source: 'https://picsum.photos/seed/final/1200/800', position: 'background' },
       content: '"El liderazgo no se trata de estar al mando, se trata de cuidar a los que están a tu mando." - Simon Sinek'
     },
     {
-      id: 'slide-27',
+      id: 'slide-30',
       type: 'visual-info',
       title: '¡Gracias por su atención!',
       subtitle: 'Defensa de Tesis Exitosa',
       visual: { type: 'image', source: 'https://picsum.photos/seed/sky/1200/800', position: 'background' },
-      content: 'Maestrante Eliseo Ortega. Gerencia Educativa. Universidad Nacional Abierta.'
+      content: 'Maestrante Eliseo Ortega. Universidad Nacional Abierta.'
     }
   ]
 };

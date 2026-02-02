@@ -63,10 +63,6 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
-  const handleRefresh = () => {
-    window.location.reload();
-  };
-
   const handleFullscreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => {
@@ -124,7 +120,7 @@ const App: React.FC = () => {
                     <Monitor className="shrink-0 text-slate-400" />
                     <div>
                       <p className="text-sm font-black uppercase tracking-wide">Exploración</p>
-                      <p className="text-xs opacity-50 font-medium leading-relaxed">Haz clic en los botones de la cabecera para Actualizar, Ampliar o ver Dispositivos.</p>
+                      <p className="text-xs opacity-50 font-medium leading-relaxed">Haz clic en los botones de la cabecera para navegar o ver la ayuda.</p>
                     </div>
                   </div>
                 </div>
@@ -208,28 +204,20 @@ const App: React.FC = () => {
            {/* Central Progress Info */}
            <div className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
               <span className="text-[10px] font-black tracking-[0.3em] text-red-600">{currentSlideIndex + 1} / {total}</span>
-              <div className="flex gap-1 mt-1">
-                {Array.from({length: total}).map((_, i) => (
-                  <div key={i} className={`h-1 rounded-full transition-all duration-500 ${i <= currentSlideIndex ? 'w-2 bg-red-600' : 'w-1 bg-white/10'}`} />
-                ))}
-              </div>
            </div>
 
            <div className="flex items-center gap-2 lg:gap-4 text-white/60">
-              {/* Utility Tools */}
-              <div className="flex items-center gap-1 lg:gap-2 mr-2 lg:mr-4 bg-white/5 p-1 rounded-xl border border-white/5">
-                <button onClick={handleRefresh} title="Actualizar" className="p-2 hover:text-red-500 hover:bg-white/5 rounded-lg transition-all"><RefreshCw size={18} /></button>
-                <button onClick={handleFullscreen} title="Ampliar / Pantalla Completa" className="p-2 hover:text-red-500 hover:bg-white/5 rounded-lg transition-all"><Maximize size={18} /></button>
-                <button onClick={toggleDevices} title="Dispositivos Activos" className="p-2 hover:text-red-500 hover:bg-white/5 rounded-lg transition-all relative">
-                  <Smartphone size={18} />
-                  <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-600 rounded-full border-2 border-[#1a1a1a]" />
-                </button>
-              </div>
-
-              {/* Navigation Tools */}
+              {/* Navigation Tools con Home */}
               <div className="hidden sm:flex items-center gap-1 lg:gap-2">
-                <button onClick={toggleAutoplay} className={`p-2 transition-all hover:text-red-500 ${isPlaying ? 'text-red-500 scale-110' : ''}`}>{isPlaying ? <Pause size={18} /> : <Play size={18} />}</button>
-                <button onClick={toggleHelp} className={`p-2 hover:text-red-500 transition-colors ${isHelpOpen ? 'text-red-500' : ''}`}><HelpCircle size={18} /></button>
+                <button onClick={() => goToSlide(0)} title="Inicio" className="p-2 hover:text-red-500 transition-colors">
+                  <Home size={18} />
+                </button>
+                <button onClick={toggleAutoplay} className={`p-2 transition-all hover:text-red-500 ${isPlaying ? 'text-red-500 scale-110' : ''}`}>
+                  {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+                </button>
+                <button onClick={toggleHelp} className={`p-2 hover:text-red-500 transition-colors ${isHelpOpen ? 'text-red-500' : ''}`}>
+                  <HelpCircle size={18} />
+                </button>
               </div>
               
               <div className="h-8 w-px bg-white/10 hidden sm:block mx-2" />
@@ -246,6 +234,15 @@ const App: React.FC = () => {
               <SlideRenderer slide={currentSlide} />
            </div>
         </div>
+
+        {/* Botón de expansión flotante minimalista - SIN MARCO REDONDO NI FONDO */}
+        <button 
+          onClick={handleFullscreen}
+          title="Pantalla Completa"
+          className="fixed bottom-6 right-6 z-[60] text-white/40 hover:text-red-600 transition-all flex items-center justify-center group"
+        >
+          <Maximize size={24} className="group-hover:scale-125 transition-transform" />
+        </button>
 
         {/* Progress bar subtle bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5 z-40">

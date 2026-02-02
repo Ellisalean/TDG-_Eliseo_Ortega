@@ -22,7 +22,9 @@ export type SlideType =
   | 'image-list-reveal'
   | 'split-reveal-cards'
   | 'flashcards'
-  | 'chart-results';
+  | 'chart-results'
+  | 'split-interactive-cards'
+  | 'keynotes-grid';
 
 export interface SlideVisual {
   type: 'image' | 'icon' | 'diagram' | 'map';
@@ -70,7 +72,7 @@ export interface Slide {
   content?: string;
   bullets?: string[];
   interaction?: {
-    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards' | 'charts';
+    type: 'click-reveal' | 'multiple-choice' | 'decision' | 'input' | 'matching' | 'side-reveal' | 'grid-cards' | 'stepped-reveal' | 'hotspots' | 'internal-slider' | 'menu-reveal' | 'drag-drop' | 'visual-selector' | 'embed-video' | 'flashcards' | 'charts' | 'split-interactive';
     options?: SlideOption[];
     revealItems?: RevealItem[];
     puzzleItems?: PuzzleItem[];
